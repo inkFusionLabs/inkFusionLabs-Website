@@ -270,6 +270,34 @@ footer {
   justify-content: center;
   gap: 0.7em;
 }
+.bg-circuit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+.hero-accent {
+  position: absolute;
+  top: 0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  width: 180px;
+  height: 60px;
+  pointer-events: none;
+}
+.apps-accent {
+  display: block;
+  margin: 0 auto 1em auto;
+  width: 120px;
+  height: 40px;
+  pointer-events: none;
+}
 @media (max-width: 600px) {
   h1 { font-size: 2rem; }
   .subtitle { font-size: 1rem; }
