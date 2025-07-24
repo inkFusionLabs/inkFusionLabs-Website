@@ -3,8 +3,8 @@ body {
   padding: 0;
   min-height: 100vh;
   font-family: 'Orbitron', 'Inter', Arial, sans-serif;
-  background: #0a0f1a;
-  color: #e0f7fa;
+  background: #0a0a0a;
+  color: #fff;
   overflow: hidden;
 }
 
@@ -14,7 +14,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  background: #0a0f1a;
+  background: #0a0a0a;
 }
 
 .circuit-bg::before {
@@ -22,8 +22,8 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 1;
-  opacity: 0.3;
-  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" xmlns="http://www.w3.org/2000/svg"><g stroke="%2300ff99" stroke-width="2" opacity="0.5"><rect x="10" y="10" width="80" height="80" fill="none"/><rect x="110" y="60" width="120" height="60" fill="none"/><rect x="250" y="30" width="60" height="120" fill="none"/><line x1="50" y1="90" x2="150" y2="90"/><line x1="170" y1="120" x2="270" y2="120"/><circle cx="200" cy="60" r="10" fill="none"/><circle cx="300" cy="100" r="8" fill="none"/></g></svg>');
+  opacity: 0.25;
+  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" xmlns="http://www.w3.org/2000/svg"><g stroke="%23e11d48" stroke-width="2" opacity="0.5"><rect x="10" y="10" width="80" height="80" fill="none"/><rect x="110" y="60" width="120" height="60" fill="none"/><rect x="250" y="30" width="60" height="120" fill="none"/><line x1="50" y1="90" x2="150" y2="90"/><line x1="170" y1="120" x2="270" y2="120"/><circle cx="200" cy="60" r="10" fill="none"/><circle cx="300" cy="100" r="8" fill="none"/></g></svg>');
   background-size: cover;
   pointer-events: none;
 }
@@ -42,17 +42,17 @@ body {
 h1 {
   font-size: 3rem;
   font-family: 'Orbitron', 'Inter', Arial, sans-serif;
-  color: #00ff99;
+  color: #e11d48;
   letter-spacing: 0.1em;
-  text-shadow: 0 0 16px #00ff99, 0 0 32px #00ff9944;
+  text-shadow: 0 0 16px #e11d48, 0 0 32px #e11d4844;
   margin-bottom: 0.5em;
 }
 
 .subtitle {
   font-size: 1.5rem;
-  color: #7eeeff;
+  color: #ffb3c6;
   margin-bottom: 2em;
-  text-shadow: 0 0 8px #00eaff44;
+  text-shadow: 0 0 8px #e11d4844;
 }
 
 .cta-btn {
@@ -60,11 +60,11 @@ h1 {
   padding: 0.75em 2em;
   font-size: 1.2rem;
   font-family: 'Orbitron', 'Inter', Arial, sans-serif;
-  color: #0a0f1a;
-  background: linear-gradient(90deg, #00ff99 0%, #00eaff 100%);
+  color: #fff;
+  background: linear-gradient(90deg, #e11d48 0%, #b91c1c 100%);
   border: none;
   border-radius: 30px;
-  box-shadow: 0 0 16px #00ff9944;
+  box-shadow: 0 0 16px #e11d4844;
   cursor: pointer;
   text-decoration: none;
   font-weight: bold;
@@ -72,9 +72,9 @@ h1 {
 }
 
 .cta-btn:hover {
-  background: linear-gradient(90deg, #00eaff 0%, #00ff99 100%);
+  background: linear-gradient(90deg, #b91c1c 0%, #e11d48 100%);
   color: #fff;
-  box-shadow: 0 0 32px #00eaff88;
+  box-shadow: 0 0 32px #e11d4888;
 }
 
 .our-apps {
@@ -82,17 +82,17 @@ h1 {
   z-index: 2;
   margin: 3em auto 0 auto;
   max-width: 500px;
-  background: rgba(10, 15, 26, 0.85);
+  background: rgba(20, 20, 20, 0.92);
   border-radius: 16px;
-  box-shadow: 0 0 24px #00ff9944;
+  box-shadow: 0 0 24px #e11d4844;
   padding: 2em 1.5em;
   text-align: center;
 }
 .our-apps h2 {
-  color: #00eaff;
+  color: #e11d48;
   font-family: 'Orbitron', 'Inter', Arial, sans-serif;
   margin-bottom: 1em;
-  text-shadow: 0 0 8px #00eaff88;
+  text-shadow: 0 0 8px #e11d4888;
 }
 .our-apps ul {
   list-style: none;
@@ -104,18 +104,18 @@ h1 {
   font-size: 1.2rem;
 }
 .our-apps a {
-  color: #00ff99;
+  color: #e11d48;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.2s, text-shadow 0.2s;
-  text-shadow: 0 0 8px #00ff9944;
+  text-shadow: 0 0 8px #e11d4844;
 }
 .our-apps a:hover {
-  color: #00eaff;
-  text-shadow: 0 0 16px #00eaff88;
+  color: #fff;
+  text-shadow: 0 0 16px #e11d4888;
 }
 .coming-soon {
-  color: #7eeeff;
+  color: #ffb3c6;
   font-size: 0.95em;
   margin-left: 0.5em;
   opacity: 0.7;
