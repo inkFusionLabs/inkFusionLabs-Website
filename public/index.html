@@ -21,33 +21,35 @@
     </g>
   </svg>
   <header>
-    <div class="fusion-logo-behind">
-      <svg class="fusion-logo" width="600" height="420" viewBox="0 0 600 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Red orbits -->
-        <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none"/>
-        <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none" transform="rotate(30 300 210)"/>
-        <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none" transform="rotate(60 300 210)"/>
-        <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none" transform="rotate(90 300 210)"/>
-        <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none" transform="rotate(120 300 210)"/>
-        <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none" transform="rotate(150 300 210)"/>
-        <!-- Electron dots -->
-        <circle cx="300" cy="70" r="24" fill="#333" />
-        <circle cx="470" cy="120" r="18" fill="#333" />
-        <circle cx="510" cy="290" r="22" fill="#333" />
-        <circle cx="390" cy="370" r="20" fill="#333" />
-        <circle cx="210" cy="370" r="24" fill="#333" />
-        <circle cx="90" cy="290" r="18" fill="#333" />
-        <circle cx="130" cy="120" r="22" fill="#333" />
-        <circle cx="300" cy="210" r="28" fill="#333" />
-        <!-- Stars -->
-        <polygon points="170,180 176,194 192,194 180,204 184,220 170,210 156,220 160,204 148,194 164,194" fill="#666"/>
-        <polygon points="430,180 436,192 448,192 440,200 444,212 430,204 416,212 420,200 412,192 424,192" fill="#666"/>
-        <polygon points="230,90 234,100 246,100 238,106 242,116 230,110 218,116 222,106 214,100 226,100" fill="#666"/>
-        <polygon points="370,90 374,100 386,100 378,106 382,116 370,110 358,116 362,106 354,100 366,100" fill="#666"/>
-        <polygon points="520,260 524,270 536,270 528,276 532,286 520,280 508,286 512,276 504,270 516,270" fill="#666"/>
-        <polygon points="80,260 84,270 96,270 88,276 92,286 80,280 68,286 72,276 64,270 76,270" fill="#666"/>
-      </svg>
-      <h1>inkFusion Labs</h1>
+    <div class="fusion-logo-container">
+      <div class="fusion-logo-behind">
+        <svg class="fusion-logo" width="600" height="420" viewBox="0 0 600 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Red orbits -->
+          <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none"/>
+          <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none" transform="rotate(30 300 210)"/>
+          <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none" transform="rotate(60 300 210)"/>
+          <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none" transform="rotate(90 300 210)"/>
+          <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none" transform="rotate(120 300 210)"/>
+          <ellipse cx="300" cy="210" rx="220" ry="80" stroke="#e11d48" stroke-width="10" fill="none" transform="rotate(150 300 210)"/>
+          <!-- Electron dots -->
+          <circle cx="300" cy="70" r="24" fill="#333" />
+          <circle cx="470" cy="120" r="18" fill="#333" />
+          <circle cx="510" cy="290" r="22" fill="#333" />
+          <circle cx="390" cy="370" r="20" fill="#333" />
+          <circle cx="210" cy="370" r="24" fill="#333" />
+          <circle cx="90" cy="290" r="18" fill="#333" />
+          <circle cx="130" cy="120" r="22" fill="#333" />
+          <circle cx="300" cy="210" r="28" fill="#333" />
+          <!-- Stars -->
+          <polygon points="170,180 176,194 192,194 180,204 184,220 170,210 156,220 160,204 148,194 164,194" fill="#666"/>
+          <polygon points="430,180 436,192 448,192 440,200 444,212 430,204 416,212 420,200 412,192 424,192" fill="#666"/>
+          <polygon points="230,90 234,100 246,100 238,106 242,116 230,110 218,116 222,106 214,100 226,100" fill="#666"/>
+          <polygon points="370,90 374,100 386,100 378,106 382,116 370,110 358,116 362,106 354,100 366,100" fill="#666"/>
+          <polygon points="520,260 524,270 536,270 528,276 532,286 520,280 508,286 512,276 504,270 516,270" fill="#666"/>
+          <polygon points="80,260 84,270 96,270 88,276 92,286 80,280 68,286 72,276 64,270 76,270" fill="#666"/>
+        </svg>
+        <h1>inkFusion Labs</h1>
+      </div>
     </div>
   </header>
   <main>
@@ -59,7 +61,7 @@
         <circle cx="140" cy="10" r="5" fill="#e11d48" opacity="0.3"/>
       </svg>
       <p class="subtitle">Innovating at the intersection of art, technology, and music.</p>
-      <a href="#explore-apps" class="cta-btn">Explore Our Apps</a>
+      <button class="cta-btn" id="open-apps-modal">Explore Our Apps</button>
     </section>
     <section class="our-apps" id="explore-apps">
       <!-- Accent SVG for apps -->
@@ -81,6 +83,23 @@
         </li>
       </ul>
     </section>
+    <!-- Modal for Explore Our Apps -->
+    <div id="apps-modal" class="apps-modal">
+      <div class="apps-modal-content">
+        <span class="close-modal" id="close-apps-modal">&times;</span>
+        <h2>Explore Our Apps</h2>
+        <div class="modal-app-list">
+          <div class="modal-app">
+            <h3>TinySteps</h3>
+            <p>Track milestones, access health services, and find support for NICU dads. <a href="https://tinystepsnicudads.co.uk" target="_blank" rel="noopener">Learn more</a></p>
+          </div>
+          <div class="modal-app">
+            <h3>omniFusionMusic</h3>
+            <p>Music innovation platform. <a href="https://www.omnifusionmusic.com" target="_blank" rel="noopener">Coming soon</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
     <p>&copy; 2024 inkFusion Labs. All rights reserved.</p>
