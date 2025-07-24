@@ -114,12 +114,14 @@ h1 {
   color: #fff;
   text-shadow: 0 0 16px #e11d4888;
 }
-.coming-soon {
-  color: #ffb3c6;
-  font-size: 0.95em;
+.app-icon-link {
   margin-left: 0.5em;
-  opacity: 0.7;
-  font-style: italic;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.2s;
+}
+.app-icon-link:hover {
+  transform: scale(1.15) rotate(-8deg);
 }
 
 .fusion-logo-wrapper {
