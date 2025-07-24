@@ -153,6 +153,55 @@ h1 {
   color: #e11d48;
   text-shadow: 0 0 16px #e11d48, 0 0 32px #e11d4844;
 }
+.fusion-logo-behind {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  margin-bottom: 0.5em;
+}
+.fusion-logo-behind h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: transparent;
+  margin: 0;
+  padding: 0.5em 1em;
+  font-size: 3.5rem;
+  color: #e11d48;
+  text-shadow: 0 0 16px #e11d48, 0 0 32px #e11d4844;
+  white-space: nowrap;
+}
+.fusion-logo {
+  position: relative;
+  width: 600px;
+  height: 420px;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+}
+.app-name {
+  font-weight: bold;
+  color: #e11d48;
+  margin-right: 0.5em;
+}
+.coming-soon-link {
+  color: #fff;
+  background: #e11d48;
+  border-radius: 12px;
+  padding: 0.2em 0.8em;
+  font-size: 1em;
+  text-decoration: none;
+  margin-left: 0.2em;
+  transition: background 0.2s, color 0.2s;
+}
+.coming-soon-link:hover {
+  background: #fff;
+  color: #e11d48;
+}
 @media (max-width: 600px) {
   h1 { font-size: 2rem; }
   .subtitle { font-size: 1rem; }
@@ -167,5 +216,18 @@ h1 {
   .fusion-logo-wrapper h1 {
     font-size: 1.2rem;
     padding: 1.2em 0.5em 0.5em 0.5em;
+  }
+}
+@media (max-width: 700px) {
+  .fusion-logo {
+    width: 320px;
+    height: 220px;
+  }
+  .fusion-logo-behind {
+    min-height: 220px;
+  }
+  .fusion-logo-behind h1 {
+    font-size: 1.5rem;
+    padding: 0.2em 0.5em;
   }
 } 
