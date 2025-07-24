@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  background: #0a0f1a;
+  color: #e0f7fa;
+  overflow: hidden;
+}
+
+.circuit-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background: #0a0f1a;
+}
+
+.circuit-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  opacity: 0.3;
+  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" xmlns="http://www.w3.org/2000/svg"><g stroke="%2300ff99" stroke-width="2" opacity="0.5"><rect x="10" y="10" width="80" height="80" fill="none"/><rect x="110" y="60" width="120" height="60" fill="none"/><rect x="250" y="30" width="60" height="120" fill="none"/><line x1="50" y1="90" x2="150" y2="90"/><line x1="170" y1="120" x2="270" y2="120"/><circle cx="200" cy="60" r="10" fill="none"/><circle cx="300" cy="100" r="8" fill="none"/></g></svg>');
+  background-size: cover;
+  pointer-events: none;
+}
+
+.content-container {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  color: #00ff99;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 16px #00ff99, 0 0 32px #00ff9944;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #7eeeff;
+  margin-bottom: 2em;
+  text-shadow: 0 0 8px #00eaff44;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 0.75em 2em;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  color: #0a0f1a;
+  background: linear-gradient(90deg, #00ff99 0%, #00eaff 100%);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 16px #00ff9944;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.cta-btn:hover {
+  background: linear-gradient(90deg, #00eaff 0%, #00ff99 100%);
+  color: #fff;
+  box-shadow: 0 0 32px #00eaff88;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  .subtitle { font-size: 1rem; }
+  .cta-btn { font-size: 1rem; padding: 0.5em 1.5em; }
+} 
