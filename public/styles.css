@@ -363,102 +363,68 @@ footer {
   .fusion-logo-behind {
     min-height: 120px;
   }
-}
-/* Modal styles */
-.apps-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-  background: rgba(10,10,10,0.85);
-  align-items: center;
-  justify-content: center;
-}
-.apps-modal-content {
-  background: #18181b;
-  margin: 5% auto;
-  padding: 2em 2.5em;
-  border-radius: 18px;
-  max-width: 400px;
-  box-shadow: 0 0 32px #e11d4844;
-  color: #fff;
-  position: relative;
-  z-index: 1001;
-  text-align: left;
-}
-.close-modal {
-  position: absolute;
-  top: 1em;
-  right: 1.2em;
-  font-size: 2em;
+} 
+.back-link {
+  display: inline-block;
+  margin: 2em 0 1em 2em;
   color: #e11d48;
-  cursor: pointer;
-  z-index: 1002;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.2s;
 }
-.modal-app-list {
-  margin-top: 1.5em;
+.back-link:hover {
+  color: #fff;
+}
+.explore-title {
+  text-align: center;
+  color: #e11d48;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.5em;
+  margin-top: 0.5em;
+  letter-spacing: 0.04em;
+}
+.apps-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
+  align-items: center;
+  gap: 2.5em;
+  margin-bottom: 3em;
 }
-.modal-app h3 {
+.app-card {
+  background: rgba(20, 20, 20, 0.92);
+  border-radius: 18px;
+  box-shadow: 0 0 24px #e11d4844;
+  padding: 2em 2.5em;
+  max-width: 400px;
+  width: 90vw;
+  text-align: center;
+}
+.app-card h2 {
   color: #e11d48;
-  margin-bottom: 0.3em;
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
 }
-.modal-app p {
+.app-card p {
   color: #fff;
-  margin: 0;
-  font-size: 1.05em;
+  margin-bottom: 1.2em;
+  font-size: 1.1em;
 }
-.modal-app a {
-  color: #e11d48;
-  text-decoration: underline;
+.app-link {
+  display: inline-block;
+  color: #fff;
+  background: #e11d48;
+  border-radius: 12px;
+  padding: 0.5em 1.5em;
+  font-size: 1em;
+  text-decoration: none;
   font-weight: bold;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 0 12px #e11d4844;
 }
-.apps-modal.show {
-  display: flex;
-}
-@media (max-width: 600px) {
-  h1 { font-size: 2rem; }
-  .subtitle { font-size: 1rem; }
-  .cta-btn { font-size: 1rem; padding: 0.5em 1.5em; }
-  .fusion-logo {
-    width: 180px;
-    height: 120px;
-  }
-  .fusion-logo-wrapper {
-    min-height: 120px;
-  }
-  .fusion-logo-wrapper h1 {
-    font-size: 1.2rem;
-    padding: 1.2em 0.5em 0.5em 0.5em;
-  }
-}
-@media (max-width: 700px) {
-  .fusion-logo {
-    width: 320px;
-    height: 220px;
-  }
-  .fusion-logo-behind {
-    min-height: 220px;
-  }
-  .fusion-logo-behind h1 {
-    font-size: 1.5rem;
-    padding: 0.2em 0.5em;
-  }
-  .hero .subtitle {
-    font-size: 1.1rem;
-    padding: 0 0.5em;
-  }
-  .hero .cta-btn {
-    font-size: 1rem;
-    padding: 0.7em 1.5em;
-  }
-  .our-apps ul {
-    gap: 1em;
-  }
+.app-link:hover {
+  background: #fff;
+  color: #e11d48;
 } 
