@@ -507,3 +507,186 @@ footer {
     font-size: 0.98em;
   }
 } 
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.2em;
+  margin: 1.2em 0 0.5em 0;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  font-size: 1.1em;
+  z-index: 10;
+}
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.3em 0.7em;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.main-nav a:hover, .main-nav a:focus {
+  background: #e11d48;
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .main-nav {
+    gap: 1em;
+    font-size: 0.98em;
+    flex-wrap: wrap;
+  }
+} 
+.blog-section {
+  background: rgba(20, 20, 20, 0.92);
+  border-radius: 18px;
+  box-shadow: 0 0 24px #e11d4844;
+  padding: 2em 2.5em;
+  max-width: 700px;
+  width: 95vw;
+  margin: 2.5em auto 0 auto;
+  text-align: center;
+}
+.blog-section h2 {
+  color: #e11d48;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  font-size: 1.7em;
+  margin-bottom: 1.2em;
+}
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.blog-post {
+  background: #18181b;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #e11d4844;
+  padding: 1.5em 1.5em 1.2em 1.5em;
+  text-align: left;
+  position: relative;
+}
+.blog-post h3 {
+  color: #e11d48;
+  margin-bottom: 0.3em;
+  font-size: 1.25em;
+}
+.blog-date {
+  color: #ffb3c6;
+  font-size: 0.98em;
+  margin-bottom: 0.7em;
+  display: block;
+}
+.blog-post p {
+  color: #fff;
+  margin-bottom: 0.7em;
+  font-size: 1.08em;
+}
+.blog-readmore {
+  color: #fff;
+  background: #e11d48;
+  border-radius: 8px;
+  padding: 0.4em 1.2em;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 0 8px #e11d4844;
+}
+.blog-readmore:hover {
+  background: #fff;
+  color: #e11d48;
+} 
+.faq-section {
+  background: rgba(20, 20, 20, 0.92);
+  border-radius: 18px;
+  box-shadow: 0 0 24px #e11d4844;
+  padding: 2em 2.5em;
+  max-width: 700px;
+  width: 95vw;
+  margin: 2.5em auto 0 auto;
+  text-align: center;
+}
+.faq-section h2 {
+  color: #e11d48;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  font-size: 1.7em;
+  margin-bottom: 1.2em;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+.faq-item {
+  background: #18181b;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #e11d4844;
+  padding: 1.2em 1.5em;
+  text-align: left;
+}
+.faq-item h3 {
+  color: #e11d48;
+  margin-bottom: 0.3em;
+  font-size: 1.15em;
+}
+.faq-item p {
+  color: #fff;
+  margin: 0;
+  font-size: 1.08em;
+}
+.faq-item a {
+  color: #e11d48;
+  text-decoration: underline;
+  font-weight: bold;
+} 
+.roadmap-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 2em 0 0 0;
+  color: #fff;
+  font-size: 1.1em;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+.roadmap-item {
+  background: #18181b;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #e11d4844;
+  padding: 1em 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.08em;
+}
+.roadmap-status {
+  font-size: 1.3em;
+  margin-right: 0.5em;
+}
+.roadmap-label {
+  margin-left: auto;
+  font-size: 0.98em;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.2em 0.8em;
+  background: #222;
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+.roadmap-item.in-progress .roadmap-label {
+  background: #e11d48;
+  color: #fff;
+}
+.roadmap-item.planned .roadmap-label {
+  background: #333;
+  color: #ffb3c6;
+}
+.roadmap-item.released .roadmap-label {
+  background: #00c48c;
+  color: #fff;
+} 
