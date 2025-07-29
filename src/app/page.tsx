@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -91,15 +90,12 @@ export default function Home() {
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Header */}
         <header id="home" className="flex flex-col items-center pt-32 pb-12 px-4 animate-fade-in">
-          <div className="relative group">
-            <Image
-              src="/logo.jpg"
-              alt="InkFusionLabs logo"
-              width={280}
-              height={160}
-              className="rounded-2xl shadow-2xl mb-8 transition-all duration-500 group-hover:scale-105 group-hover:shadow-red-500/25 card-hover"
-              priority
-            />
+          <div className="relative group mb-8">
+            <div className="w-32 h-32 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-105 group-hover:shadow-red-500/25 card-hover">
+              <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
           
