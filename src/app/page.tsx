@@ -322,7 +322,7 @@ export default function Home() {
                       <p className="text-sm text-gray-400">CEO, TechStart</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 italic">"InkFusionLabs delivered an exceptional web application that exceeded our expectations. The attention to detail and modern design approach made all the difference."</p>
+                  <p className="text-gray-300 italic">&ldquo;InkFusionLabs delivered an exceptional web application that exceeded our expectations. The attention to detail and modern design approach made all the difference.&rdquo;</p>
                 </div>
                 <div className="p-6 bg-gray-700/50 rounded-2xl card-hover">
                   <div className="flex items-center gap-3 mb-4">
@@ -334,7 +334,7 @@ export default function Home() {
                       <p className="text-sm text-gray-400">Founder, InnovateCorp</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 italic">"The automation tools developed by InkFusionLabs have revolutionized our workflow. The quality and reliability are outstanding."</p>
+                  <p className="text-gray-300 italic">&ldquo;The automation tools developed by InkFusionLabs have revolutionized our workflow. The quality and reliability are outstanding.&rdquo;</p>
                 </div>
               </div>
             </div>
@@ -355,7 +355,7 @@ export default function Home() {
                 <div>
                   <p className="text-lg text-gray-300 leading-relaxed mb-6">
                     Ready to collaborate or learn more about our innovative solutions? 
-                    Let's discuss how we can bring your ideas to life with cutting-edge technology.
+                    Let&apos;s discuss how we can bring your ideas to life with cutting-edge technology.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
