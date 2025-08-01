@@ -551,7 +551,22 @@ export default function Home() {
             <span>&copy; {new Date().getFullYear()} InkFusionLabs</span>
             <div className="w-1 h-1 bg-red-500 rounded-full"></div>
           </div>
-          <p className="text-xs text-gray-500">Crafting the future, one line of code at a time</p>
+          <p className="text-xs text-gray-500 mb-4">Crafting the future, one line of code at a time</p>
+          <div className="flex items-center justify-center gap-4 text-xs">
+            <a 
+              href="/privacy" 
+              className="text-gray-400 hover:text-red-400 transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
+            <a 
+              href="mailto:John.Constable@inkfusionlabs.co.uk" 
+              className="text-gray-400 hover:text-red-400 transition-colors"
+            >
+              Contact
+            </a>
+          </div>
         </footer>
       </div>
 
