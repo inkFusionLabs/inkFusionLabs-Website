@@ -6,6 +6,7 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,18 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+    }
+    
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+    };
+  }, [isMobileMenuOpen]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -26,6 +39,15 @@ export default function Home() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleMobileNavClick = (sectionId: string) => {
+    scrollToSection(sectionId);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -78,6 +100,7 @@ export default function Home() {
             </div>
             <div className="md:hidden">
               <button 
+                onClick={toggleMobileMenu}
                 className="text-gray-300 hover:text-red-400 transition-colors p-2"
                 aria-label="Open mobile menu"
                 style={{ minWidth: '44px', minHeight: '44px' }}
@@ -90,6 +113,63 @@ export default function Home() {
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-50 md:hidden">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          
+          {/* Menu Content */}
+          <div className="absolute top-0 right-0 w-64 h-full bg-gray-900/95 backdrop-blur-md border-l border-gray-700/50 transform transition-transform duration-300 ease-in-out">
+            <div className="flex flex-col h-full">
+              {/* Header */}
+              <div className="flex items-center justify-between p-4 border-b border-gray-700/50">
+                <span className="text-lg font-bold text-white">Menu</span>
+                <button 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-gray-300 hover:text-red-400 transition-colors p-2"
+                  aria-label="Close mobile menu"
+                  style={{ minWidth: '44px', minHeight: '44px' }}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              {/* Navigation Links */}
+              <nav className="flex-1 p-4">
+                <div className="space-y-2">
+                  {["home", "about", "freelancing", "projects", "skills", "contact"].map((section) => (
+                    <button
+                      key={section}
+                      onClick={() => handleMobileNavClick(section)}
+                      className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gray-700/50 ${
+                        activeSection === section ? "bg-red-500/20 text-red-400" : "text-gray-300 hover:text-white"
+                      }`}
+                      style={{ minHeight: '44px' }}
+                    >
+                      {section.charAt(0).toUpperCase() + section.slice(1)}
+                    </button>
+                  ))}
+                </div>
+              </nav>
+              
+              {/* Footer */}
+              <div className="p-4 border-t border-gray-700/50">
+                <div className="text-center text-sm text-gray-400">
+                  <p>InkFusionLabs</p>
+                  <p className="mt-1">Professional Development Services</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Header */}
