@@ -257,7 +257,7 @@ export default function Home() {
                     <div className="p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl border border-gray-600/50 card-hover">
                       <div className="flex items-center justify-between mb-3">
                         <h4 className="font-semibold text-white">Web Development</h4>
-                        <span className="text-red-400 font-semibold">$75-150/hr</span>
+                        <span className="text-red-400 font-semibold">£60-120/hr</span>
                       </div>
                       <p className="text-sm text-gray-300 mb-3">Custom web applications, e-commerce sites, and modern UI/UX</p>
                       <div className="flex flex-wrap gap-2">
@@ -270,7 +270,7 @@ export default function Home() {
                     <div className="p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl border border-gray-600/50 card-hover">
                       <div className="flex items-center justify-between mb-3">
                         <h4 className="font-semibold text-white">Automation & Scripts</h4>
-                        <span className="text-red-400 font-semibold">$60-120/hr</span>
+                        <span className="text-red-400 font-semibold">£50-100/hr</span>
                       </div>
                       <p className="text-sm text-gray-300 mb-3">Process automation, data processing, and workflow optimization</p>
                       <div className="flex flex-wrap gap-2">
@@ -283,7 +283,7 @@ export default function Home() {
                     <div className="p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl border border-gray-600/50 card-hover">
                       <div className="flex items-center justify-between mb-3">
                         <h4 className="font-semibold text-white">Technical Consulting</h4>
-                        <span className="text-red-400 font-semibold">$100-200/hr</span>
+                        <span className="text-red-400 font-semibold">£80-160/hr</span>
                       </div>
                       <p className="text-sm text-gray-300 mb-3">Architecture review, code optimization, and technical guidance</p>
                       <div className="flex flex-wrap gap-2">
