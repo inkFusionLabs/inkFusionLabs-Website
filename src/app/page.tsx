@@ -64,7 +64,7 @@ export default function Home() {
               <span className="text-xl font-bold text-white">InkFusionLabs</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              {["home", "about", "projects", "skills", "contact"].map((section) => (
+              {["home", "about", "freelancing", "projects", "skills", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -104,7 +104,7 @@ export default function Home() {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide text-center max-w-2xl animate-slide-up [animation-delay:200ms]">
-            Crafting innovative tech solutions with precision and passion
+            Crafting innovative tech solutions with precision and passion • Available for freelance projects
           </p>
           
           <div className="flex items-center gap-2 mt-6 text-gray-400 animate-slide-up [animation-delay:400ms]">
@@ -116,10 +116,10 @@ export default function Home() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8 animate-slide-up [animation-delay:600ms]">
             <button 
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("freelancing")}
               className="px-8 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-red-500/25 card-hover"
             >
-              Get Started
+              Hire Me
             </button>
             <button 
               onClick={() => scrollToSection("projects")}
@@ -195,8 +195,123 @@ export default function Home() {
             </div>
           </section>
 
+          {/* Freelancing Section */}
+          <section id="freelancing" className="w-full animate-slide-up [animation-delay:1000ms]">
+            <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 shadow-2xl hover:shadow-red-500/10 transition-all duration-500 card-hover">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2h8a2 2 0 012 2z" />
+                  </svg>
+                </div>
+                <h2 className="text-3xl font-bold text-white">Freelancing Services</h2>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Available for Hire</h3>
+                  <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                    I'm currently accepting new freelance projects and collaborations. Whether you need a complete web application, 
+                    automation tools, or technical consulting, I'm here to help bring your ideas to life.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-xl card-hover">
+                      <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white">Quick Turnaround</h4>
+                        <p className="text-sm text-gray-400">Fast delivery without compromising quality</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-xl card-hover">
+                      <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white">Quality Guaranteed</h4>
+                        <p className="text-sm text-gray-400">Thorough testing and documentation</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-xl card-hover">
+                      <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white">Ongoing Support</h4>
+                        <p className="text-sm text-gray-400">Post-launch maintenance and updates</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Services & Pricing</h3>
+                  <div className="space-y-4">
+                    <div className="p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl border border-gray-600/50 card-hover">
+                      <div className="flex items-center justify-between mb-3">
+                        <h4 className="font-semibold text-white">Web Development</h4>
+                        <span className="text-red-400 font-semibold">$75-150/hr</span>
+                      </div>
+                      <p className="text-sm text-gray-300 mb-3">Custom web applications, e-commerce sites, and modern UI/UX</p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">React</span>
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Next.js</span>
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">TypeScript</span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl border border-gray-600/50 card-hover">
+                      <div className="flex items-center justify-between mb-3">
+                        <h4 className="font-semibold text-white">Automation & Scripts</h4>
+                        <span className="text-red-400 font-semibold">$60-120/hr</span>
+                      </div>
+                      <p className="text-sm text-gray-300 mb-3">Process automation, data processing, and workflow optimization</p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Python</span>
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Node.js</span>
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">AWS</span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl border border-gray-600/50 card-hover">
+                      <div className="flex items-center justify-between mb-3">
+                        <h4 className="font-semibold text-white">Technical Consulting</h4>
+                        <span className="text-red-400 font-semibold">$100-200/hr</span>
+                      </div>
+                      <p className="text-sm text-gray-300 mb-3">Architecture review, code optimization, and technical guidance</p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Architecture</span>
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Optimization</span>
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Strategy</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <a 
+                  href="mailto:hello@inkfusionlabs.com?subject=Freelance Project Inquiry" 
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-red-500/25 card-hover"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Start Your Project
+                </a>
+              </div>
+            </div>
+          </section>
+
           {/* Skills Section */}
-          <section id="skills" className="w-full animate-slide-up [animation-delay:1000ms]">
+          <section id="skills" className="w-full animate-slide-up [animation-delay:1200ms]">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 shadow-2xl hover:shadow-red-500/10 transition-all duration-500 card-hover">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
@@ -251,7 +366,7 @@ export default function Home() {
           </section>
 
           {/* Projects Section */}
-          <section id="projects" className="w-full animate-slide-up [animation-delay:1200ms]">
+          <section id="projects" className="w-full animate-slide-up [animation-delay:1400ms]">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 shadow-2xl hover:shadow-red-500/10 transition-all duration-500 card-hover">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
@@ -297,7 +412,7 @@ export default function Home() {
           </section>
 
           {/* Testimonials Section */}
-          <section className="w-full animate-slide-up [animation-delay:1400ms]">
+          <section className="w-full animate-slide-up [animation-delay:1600ms]">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 shadow-2xl hover:shadow-red-500/10 transition-all duration-500 card-hover">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
@@ -337,7 +452,7 @@ export default function Home() {
           </section>
 
           {/* Contact Section */}
-          <section id="contact" className="w-full animate-slide-up [animation-delay:1600ms]">
+          <section id="contact" className="w-full animate-slide-up [animation-delay:1800ms]">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/50 shadow-2xl hover:shadow-red-500/10 transition-all duration-500 card-hover">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
@@ -407,7 +522,7 @@ export default function Home() {
         </main>
 
         {/* Footer */}
-        <footer className="text-center py-8 text-gray-400 text-sm animate-slide-up [animation-delay:1800ms]">
+        <footer className="text-center py-8 text-gray-400 text-sm animate-slide-up [animation-delay:2000ms]">
           <div className="flex items-center justify-center gap-2 mb-2">
             <div className="w-1 h-1 bg-red-500 rounded-full"></div>
             <span>&copy; {new Date().getFullYear()} InkFusionLabs</span>
