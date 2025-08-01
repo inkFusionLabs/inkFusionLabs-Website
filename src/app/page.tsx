@@ -104,7 +104,7 @@ export default function Home() {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide text-center max-w-2xl animate-slide-up [animation-delay:200ms]">
-            Crafting innovative tech solutions with precision and passion • Available for freelance projects
+            Crafting innovative tech solutions with precision and passion • Available for freelance projects • iOS Development
           </p>
           
           <div className="flex items-center gap-2 mt-6 text-gray-400 animate-slide-up [animation-delay:400ms]">
@@ -153,7 +153,7 @@ export default function Home() {
                   <p className="text-lg text-gray-300 leading-relaxed">
                     We believe in creating solutions that not only work flawlessly but also delight users with their 
                     elegance and efficiency. From concept to deployment, every detail is carefully considered to ensure 
-                    the highest quality results.
+                    the highest quality results. Specializing in web applications, iOS development, and automation solutions.
                   </p>
                 </div>
                 <div className="space-y-4">
@@ -212,7 +212,7 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-white mb-4">Available for Hire</h3>
                   <p className="text-lg text-gray-300 leading-relaxed mb-6">
                     I&apos;m currently accepting new freelance projects and collaborations. Whether you need a complete web application, 
-                    automation tools, or technical consulting, I&apos;m here to help bring your ideas to life.
+                    iOS mobile app, automation tools, or technical consulting, I&apos;m here to help bring your ideas to life.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-xl card-hover">
@@ -264,6 +264,19 @@ export default function Home() {
                         <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">React</span>
                         <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Next.js</span>
                         <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">TypeScript</span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl border border-gray-600/50 card-hover">
+                      <div className="flex items-center justify-between mb-3">
+                        <h4 className="font-semibold text-white">iOS Development</h4>
+                        <span className="text-red-400 font-semibold">£30-50/hr</span>
+                      </div>
+                      <p className="text-sm text-gray-300 mb-3">Native iOS applications, App Store optimization, and mobile UI/UX</p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Swift</span>
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">SwiftUI</span>
+                        <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">UIKit</span>
                       </div>
                     </div>
                     
@@ -325,7 +338,7 @@ export default function Home() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-white mb-4">Frontend</h3>
                   <div className="space-y-3">
-                    {["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"].map((skill) => (
+                    {["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js", "Swift"].map((skill) => (
                       <div key={skill} className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-colors card-hover">
                         <span className="text-gray-200">{skill}</span>
                         <div className="w-16 h-2 bg-gray-600 rounded-full overflow-hidden">
@@ -385,6 +398,16 @@ export default function Home() {
                     <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">React</span>
                     <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Node.js</span>
                     <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">TypeScript</span>
+                  </div>
+                </div>
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 p-6 hover:from-gray-700/70 hover:to-gray-800/70 transition-all duration-300 card-hover">
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-red-500 rounded-full"></div>
+                  <h3 className="text-xl font-semibold text-white mb-3">iOS Mobile Applications</h3>
+                  <p className="text-gray-300 text-sm mb-4">Native iOS apps with modern UI/UX design</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Swift</span>
+                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">SwiftUI</span>
+                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">UIKit</span>
                   </div>
                 </div>
                 <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 p-6 hover:from-gray-700/70 hover:to-gray-800/70 transition-all duration-300 card-hover">

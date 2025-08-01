@@ -11,22 +11,22 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "InkFusionLabs - Freelance Tech Solutions",
-  description: "Available for hire! Crafting innovative tech solutions with precision and passion. Custom web applications, automation tools, and AI-powered solutions by a solo creator.",
-  keywords: ["freelance", "web development", "automation", "AI solutions", "tech consulting", "custom applications", "hire developer"],
+  description: "Available for hire! Crafting innovative tech solutions with precision and passion. Custom web applications, iOS development, automation tools, and AI-powered solutions by a solo creator.",
+  keywords: ["freelance", "web development", "iOS development", "Swift", "automation", "AI solutions", "tech consulting", "custom applications", "hire developer"],
   authors: [{ name: "InkFusionLabs" }],
   creator: "InkFusionLabs",
   publisher: "InkFusionLabs",
   robots: "index, follow",
   openGraph: {
     title: "InkFusionLabs - Freelance Tech Solutions",
-    description: "Available for hire! Crafting innovative tech solutions with precision and passion. Custom web applications, automation tools, and AI-powered solutions.",
+    description: "Available for hire! Crafting innovative tech solutions with precision and passion. Custom web applications, iOS development, automation tools, and AI-powered solutions.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "InkFusionLabs - Freelance Tech Solutions",
-    description: "Available for hire! Crafting innovative tech solutions with precision and passion.",
+    description: "Available for hire! Crafting innovative tech solutions with precision and passion. Web & iOS development.",
   },
 };
 
