@@ -2,7 +2,7 @@
 
 import Script from 'next/script';
 
-const GA_TRACKING_ID = 'G-XXXXXXXXXX'; // Replace with your actual Google Analytics ID
+const GA_TRACKING_ID = 'G-1QMSDWSG99';
 
 export default function GoogleAnalytics() {
   return (
