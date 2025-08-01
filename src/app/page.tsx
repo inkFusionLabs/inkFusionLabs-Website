@@ -211,8 +211,8 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-4">Available for Hire</h3>
                   <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                    I'm currently accepting new freelance projects and collaborations. Whether you need a complete web application, 
-                    automation tools, or technical consulting, I'm here to help bring your ideas to life.
+                    I&apos;m currently accepting new freelance projects and collaborations. Whether you need a complete web application, 
+                    automation tools, or technical consulting, I&apos;m here to help bring your ideas to life.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-xl card-hover">
