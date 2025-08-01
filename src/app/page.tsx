@@ -298,7 +298,7 @@ export default function Home() {
               
               <div className="text-center">
                 <a 
-                  href="mailto:hello@inkfusionlabs.com?subject=Freelance Project Inquiry" 
+                  href="mailto:inkfusionlabs@icloud.com?subject=Freelance Project Inquiry" 
                   className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-red-500/25 card-hover"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -477,7 +477,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-white">Email</h3>
-                        <p className="text-gray-400">hello@inkfusionlabs.com</p>
+                        <p className="text-gray-400">inkfusionlabs@icloud.com</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -507,7 +507,7 @@ export default function Home() {
                 </div>
                 <div className="text-center">
                   <a 
-                    href="mailto:hello@inkfusionlabs.com" 
+                    href="mailto:inkfusionlabs@icloud.com" 
                     className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-red-500/25 card-hover"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
