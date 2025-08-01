@@ -77,7 +77,11 @@ export default function Home() {
               ))}
             </div>
             <div className="md:hidden">
-              <button className="text-gray-300 hover:text-red-400 transition-colors">
+              <button 
+                className="text-gray-300 hover:text-red-400 transition-colors p-2"
+                aria-label="Open mobile menu"
+                style={{ minWidth: '44px', minHeight: '44px' }}
+              >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -117,13 +121,15 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 mt-8 animate-slide-up [animation-delay:600ms]">
             <button 
               onClick={() => scrollToSection("freelancing")}
-              className="px-8 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-red-500/25 card-hover"
+              className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-red-500/25 card-hover cta-button"
+              style={{ minHeight: '44px' }}
             >
               Hire Me
             </button>
             <button 
               onClick={() => scrollToSection("projects")}
-              className="px-8 py-3 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-red-500 hover:text-red-400 transition-all duration-300 card-hover"
+              className="px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-red-500 hover:text-red-400 transition-all duration-300 card-hover cta-button"
+              style={{ minHeight: '44px' }}
             >
               View Projects
             </button>
