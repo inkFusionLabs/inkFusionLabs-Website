@@ -61,7 +61,7 @@ export default function PrivacyPolicy() {
           </h1>
           
           <p className="text-lg md:text-xl text-gray-300 font-light tracking-wide text-center max-w-2xl">
-            How we collect, use, and protect your information
+            How we collect, use, and protect your information - Updated
           </p>
         </header>
 
