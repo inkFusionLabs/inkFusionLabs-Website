@@ -7,6 +7,19 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [particles, setParticles] = useState<Array<{left: string, top: string, delay: string, duration: string}>>([]);
+
+  useEffect(() => {
+    // Generate particles only on client side to avoid hydration mismatch
+    setParticles(
+      Array.from({ length: 20 }, () => ({
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 6}s`,
+        duration: `${6 + Math.random() * 4}s`
+      }))
+    );
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,15 +70,15 @@ export default function Home() {
       
       {/* Particle effects */}
       <div className="particles">
-        {[...Array(20)].map((_, i) => (
+        {particles.map((particle, i) => (
           <div
             key={i}
             className="particle"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-              animationDuration: `${6 + Math.random() * 4}s`
+              left: particle.left,
+              top: particle.top,
+              animationDelay: particle.delay,
+              animationDuration: particle.duration
             }}
           />
         ))}
@@ -424,11 +437,18 @@ export default function Home() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-white mb-4">Frontend</h3>
                   <div className="space-y-3">
-                    {["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js", "Swift"].map((skill) => (
-                      <div key={skill} className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-colors card-hover">
-                        <span className="text-gray-200">{skill}</span>
+                    {[
+                      { name: "React", level: 95 },
+                      { name: "Next.js", level: 90 },
+                      { name: "TypeScript", level: 88 },
+                      { name: "Tailwind CSS", level: 92 },
+                      { name: "Vue.js", level: 75 },
+                      { name: "Swift", level: 85 }
+                    ].map((skill) => (
+                      <div key={skill.name} className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-colors card-hover">
+                        <span className="text-gray-200">{skill.name}</span>
                         <div className="w-16 h-2 bg-gray-600 rounded-full overflow-hidden">
-                          <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full skill-bar" style={{ width: `${Math.random() * 40 + 60}%` }}></div>
+                          <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full skill-bar" style={{ width: `${skill.level}%` }}></div>
                         </div>
                       </div>
                     ))}
@@ -437,11 +457,17 @@ export default function Home() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-white mb-4">Backend</h3>
                   <div className="space-y-3">
-                    {["Node.js", "Python", "PostgreSQL", "MongoDB", "AWS"].map((skill) => (
-                      <div key={skill} className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-colors card-hover">
-                        <span className="text-gray-200">{skill}</span>
+                    {[
+                      { name: "Node.js", level: 88 },
+                      { name: "Python", level: 82 },
+                      { name: "PostgreSQL", level: 85 },
+                      { name: "MongoDB", level: 80 },
+                      { name: "AWS", level: 75 }
+                    ].map((skill) => (
+                      <div key={skill.name} className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-colors card-hover">
+                        <span className="text-gray-200">{skill.name}</span>
                         <div className="w-16 h-2 bg-gray-600 rounded-full overflow-hidden">
-                          <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full skill-bar" style={{ width: `${Math.random() * 40 + 60}%` }}></div>
+                          <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full skill-bar" style={{ width: `${skill.level}%` }}></div>
                         </div>
                       </div>
                     ))}
@@ -450,11 +476,17 @@ export default function Home() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-white mb-4">Tools</h3>
                   <div className="space-y-3">
-                    {["Git", "Docker", "Figma", "Vercel", "Firebase"].map((skill) => (
-                      <div key={skill} className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-colors card-hover">
-                        <span className="text-gray-200">{skill}</span>
+                    {[
+                      { name: "Git", level: 90 },
+                      { name: "Docker", level: 78 },
+                      { name: "Figma", level: 85 },
+                      { name: "Vercel", level: 92 },
+                      { name: "Firebase", level: 80 }
+                    ].map((skill) => (
+                      <div key={skill.name} className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-colors card-hover">
+                        <span className="text-gray-200">{skill.name}</span>
                         <div className="w-16 h-2 bg-gray-600 rounded-full overflow-hidden">
-                          <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full skill-bar" style={{ width: `${Math.random() * 40 + 60}%` }}></div>
+                          <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full skill-bar" style={{ width: `${skill.level}%` }}></div>
                         </div>
                       </div>
                     ))}
@@ -473,47 +505,152 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
                 </div>
-                <h2 className="text-3xl font-bold text-white">Projects</h2>
+                <h2 className="text-3xl font-bold text-white">Featured Projects</h2>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 p-6 hover:from-gray-700/70 hover:to-gray-800/70 transition-all duration-300 card-hover">
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-red-500 rounded-full"></div>
-                  <h3 className="text-xl font-semibold text-white mb-3">Custom Web Applications</h3>
-                  <p className="text-gray-300 text-sm mb-4">Tailored solutions for businesses and individuals</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">React</span>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Node.js</span>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">TypeScript</span>
+              
+              {/* Featured Project - OmniFusion Music */}
+              <div className="mb-8">
+                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-900/30 via-gray-800/50 to-gray-900/50 p-8 border border-purple-500/30 hover:border-purple-500/50 transition-all duration-500 card-hover">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-red-500 to-pink-500"></div>
+                  <div className="absolute top-6 right-6">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-xs font-semibold text-green-400 uppercase tracking-wider">Latest Project</span>
+                    </div>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h3 className="text-2xl font-bold text-white">OmniFusion Music</h3>
+                          <p className="text-sm text-purple-300">Song Request System</p>
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-300 text-base leading-relaxed mb-6">
+                        A professional, real-time music request system designed for DJs and event management. 
+                        Features a mobile-friendly guest request form and a powerful dashboard for managing song 
+                        requests with multi-DJ support and event isolation.
+                      </p>
+                      
+                      <div className="space-y-3 mb-6">
+                        <div className="flex items-start gap-3">
+                          <svg className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <p className="text-sm text-gray-300">Real-time request management with live statistics and filtering</p>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <svg className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <p className="text-sm text-gray-300">Multi-DJ support with isolated event streams</p>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <svg className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <p className="text-sm text-gray-300">Progressive Web App (PWA) with offline capabilities</p>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <svg className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <p className="text-sm text-gray-300">Priority-based request system with instant notifications</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-3 uppercase tracking-wider">Technologies Used</h4>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1.5 bg-purple-500/20 text-purple-300 text-sm rounded-lg border border-purple-500/30">JavaScript</span>
+                          <span className="px-3 py-1.5 bg-purple-500/20 text-purple-300 text-sm rounded-lg border border-purple-500/30">Supabase</span>
+                          <span className="px-3 py-1.5 bg-purple-500/20 text-purple-300 text-sm rounded-lg border border-purple-500/30">PWA</span>
+                          <span className="px-3 py-1.5 bg-purple-500/20 text-purple-300 text-sm rounded-lg border border-purple-500/30">PostgreSQL</span>
+                          <span className="px-3 py-1.5 bg-purple-500/20 text-purple-300 text-sm rounded-lg border border-purple-500/30">Real-time DB</span>
+                          <span className="px-3 py-1.5 bg-purple-500/20 text-purple-300 text-sm rounded-lg border border-purple-500/30">Responsive Design</span>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-3 uppercase tracking-wider">Key Features</h4>
+                        <div className="grid grid-cols-2 gap-3">
+                          <div className="p-3 bg-gray-700/30 rounded-lg border border-gray-600/30">
+                            <div className="flex items-center gap-2 mb-1">
+                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                              <span className="text-xs font-semibold text-white">Guest Form</span>
+                            </div>
+                            <p className="text-xs text-gray-400">Mobile-friendly requests</p>
+                          </div>
+                          <div className="p-3 bg-gray-700/30 rounded-lg border border-gray-600/30">
+                            <div className="flex items-center gap-2 mb-1">
+                              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                              <span className="text-xs font-semibold text-white">DJ Dashboard</span>
+                            </div>
+                            <p className="text-xs text-gray-400">Real-time management</p>
+                          </div>
+                          <div className="p-3 bg-gray-700/30 rounded-lg border border-gray-600/30">
+                            <div className="flex items-center gap-2 mb-1">
+                              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                              <span className="text-xs font-semibold text-white">Event Codes</span>
+                            </div>
+                            <p className="text-xs text-gray-400">Multi-DJ isolation</p>
+                          </div>
+                          <div className="p-3 bg-gray-700/30 rounded-lg border border-gray-600/30">
+                            <div className="flex items-center gap-2 mb-1">
+                              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                              <span className="text-xs font-semibold text-white">Print Slips</span>
+                            </div>
+                            <p className="text-xs text-gray-400">Physical requests</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 p-6 hover:from-gray-700/70 hover:to-gray-800/70 transition-all duration-300 card-hover">
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-red-500 rounded-full"></div>
-                  <h3 className="text-xl font-semibold text-white mb-3">iOS Mobile Applications</h3>
-                  <p className="text-gray-300 text-sm mb-4">Native iOS apps with modern UI/UX design</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Swift</span>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">SwiftUI</span>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">UIKit</span>
+              </div>
+              
+              {/* Other Projects Grid */}
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-6">More Projects</h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 p-6 hover:from-gray-700/70 hover:to-gray-800/70 transition-all duration-300 card-hover">
+                    <div className="absolute top-4 right-4 w-3 h-3 bg-red-500 rounded-full"></div>
+                    <h3 className="text-xl font-semibold text-white mb-3">Custom Web Applications</h3>
+                    <p className="text-gray-300 text-sm mb-4">Tailored solutions for businesses and individuals</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">React</span>
+                      <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Node.js</span>
+                      <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">TypeScript</span>
+                    </div>
                   </div>
-                </div>
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 p-6 hover:from-gray-700/70 hover:to-gray-800/70 transition-all duration-300 card-hover">
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-red-500 rounded-full"></div>
-                  <h3 className="text-xl font-semibold text-white mb-3">Automation Tools</h3>
-                  <p className="text-gray-300 text-sm mb-4">Streamlining workflows and processes</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Python</span>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">AWS</span>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Docker</span>
+                  <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 p-6 hover:from-gray-700/70 hover:to-gray-800/70 transition-all duration-300 card-hover">
+                    <div className="absolute top-4 right-4 w-3 h-3 bg-red-500 rounded-full"></div>
+                    <h3 className="text-xl font-semibold text-white mb-3">iOS Mobile Applications</h3>
+                    <p className="text-gray-300 text-sm mb-4">Native iOS apps with modern UI/UX design</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Swift</span>
+                      <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">SwiftUI</span>
+                      <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">UIKit</span>
+                    </div>
                   </div>
-                </div>
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 p-6 hover:from-gray-700/70 hover:to-gray-800/70 transition-all duration-300 card-hover">
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                  <h3 className="text-xl font-semibold text-white mb-3">AI-Powered Solutions</h3>
-                  <p className="text-gray-300 text-sm mb-4">Intelligent applications and systems</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Machine Learning</span>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">OpenAI</span>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">TensorFlow</span>
+                  <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 p-6 hover:from-gray-700/70 hover:to-gray-800/70 transition-all duration-300 card-hover">
+                    <div className="absolute top-4 right-4 w-3 h-3 bg-red-500 rounded-full"></div>
+                    <h3 className="text-xl font-semibold text-white mb-3">Automation Tools</h3>
+                    <p className="text-gray-300 text-sm mb-4">Streamlining workflows and processes</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Python</span>
+                      <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">AWS</span>
+                      <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Docker</span>
+                    </div>
                   </div>
                 </div>
               </div>

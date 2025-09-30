@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import PWAInstallPrompt from "./components/PWAInstallPrompt";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,6 +18,12 @@ export const metadata: Metadata = {
   creator: "InkFusionLabs",
   publisher: "InkFusionLabs",
   robots: "index, follow",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "InkFusionLabs",
+  },
   openGraph: {
     title: "InkFusionLabs - Freelance Tech Solutions",
     description: "Available for hire! Crafting innovative tech solutions with precision and passion. Custom web applications, iOS development, automation tools, and AI-powered solutions.",
@@ -43,10 +50,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="apple-touch-icon" href="/icon-192.png" />
+      </head>
       <body
         className={`${inter.variable} antialiased`}
       >
         <GoogleAnalytics />
+        <PWAInstallPrompt />
         {children}
       </body>
     </html>
