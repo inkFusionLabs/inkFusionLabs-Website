@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "InkFusionLabs - Freelance Tech Solutions",
-  description: "Available for hire! Crafting innovative tech solutions with precision and passion. Custom web applications, iOS development, automation tools, and AI-powered solutions by a solo creator.",
-  keywords: ["freelance", "web development", "iOS development", "Swift", "automation", "AI solutions", "tech consulting", "custom applications", "hire developer"],
+  title: "InkFusionLabs | Thoughtful Apps & Modern Web Experiences",
+  description: "InkFusionLabs is a studio building thoughtful apps and modern web experiences. We design and develop digital products that feel simple, fast, and human.",
+  keywords: ["InkFusionLabs", "app development", "website development", "product design", "mobile apps", "web apps", "UK studio"],
   authors: [{ name: "InkFusionLabs" }],
   creator: "InkFusionLabs",
   publisher: "InkFusionLabs",
@@ -25,15 +25,15 @@ export const metadata: Metadata = {
     title: "InkFusionLabs",
   },
   openGraph: {
-    title: "InkFusionLabs - Freelance Tech Solutions",
-    description: "Available for hire! Crafting innovative tech solutions with precision and passion. Custom web applications, iOS development, automation tools, and AI-powered solutions.",
+    title: "InkFusionLabs | Thoughtful Apps & Modern Web Experiences",
+    description: "We design and develop digital products that feel simple, fast, and human.",
     type: "website",
-    locale: "en_US",
+    locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
-    title: "InkFusionLabs - Freelance Tech Solutions",
-    description: "Available for hire! Crafting innovative tech solutions with precision and passion. Web & iOS development.",
+    title: "InkFusionLabs | Thoughtful Apps & Modern Web Experiences",
+    description: "We design and develop digital products that feel simple, fast, and human.",
   },
 };
 
@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en-GB" className="scroll-smooth">
       <head>
         <link rel="apple-touch-icon" href="/icon-192.png" />
       </head>
