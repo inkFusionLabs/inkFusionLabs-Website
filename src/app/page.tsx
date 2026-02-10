@@ -160,26 +160,26 @@ export default function Home() {
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Hero */}
         <header id="home" className="flex flex-col items-center pt-32 pb-16 px-4 animate-fade-in">
-          <div className="w-full max-w-4xl flex flex-col md:flex-row md:items-center md:justify-center md:gap-12">
-            <div className="flex flex-col items-center md:items-end md:text-right flex-1">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white text-center md:text-right mb-4 animate-slide-up">
-                InkFusionLabs designs and builds digital products.
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide text-center md:text-right max-w-2xl animate-slide-up [animation-delay:200ms]">
-                A small studio. We build complete apps and websites from start to finish.
-              </p>
-            </div>
-            <div className="mt-8 md:mt-0 flex-shrink-0 animate-slide-up [animation-delay:100ms]">
-              <div className="relative h-24 w-24 md:h-32 md:w-32">
+          <div className="w-full max-w-4xl flex flex-col items-center">
+            <div className="mb-8 flex-shrink-0 animate-slide-up">
+              <div className="relative h-20 w-20 md:h-24 md:w-24">
                 <Image
                   src="/assets/brand/inkfusionlabs-logo-dark.png"
                   alt="InkFusionLabs logo"
                   fill
                   className="object-contain"
                   priority
-                  sizes="(max-width: 768px) 96px, 128px"
+                  sizes="(max-width: 768px) 80px, 96px"
                 />
               </div>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 animate-slide-up [animation-delay:100ms]">
+                InkFusionLabs designs and builds digital products.
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide max-w-2xl animate-slide-up [animation-delay:200ms]">
+                A small studio. We build complete apps and websites from start to finish.
+              </p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mt-10 animate-slide-up [animation-delay:400ms]">
@@ -242,20 +242,21 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Products by InkFusionLabs */}
+          {/* Products */}
           <section id="products" className="w-full">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Products</h2>
-              <p className="text-gray-400 mb-8">Apps and websites we&apos;ve built and run.</p>
+              <p className="text-gray-400 mb-8">A small selection of things we&apos;ve designed, built, and launched at InkFusionLabs.</p>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* TinySteps - TODO: Add product screenshot when available */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* TinySteps */}
                 <div className="group rounded-2xl bg-gradient-to-br from-emerald-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-emerald-500/20 hover:border-emerald-500/40 transition-all card-hover flex flex-col">
                   <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
-                    <Image src="/TinySteps.icon/Assets/AppIcon_1024x1024.png" alt="TinySteps — a supportive digital platform for NICU dads" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                    <Image src="/TinySteps.icon/Assets/AppIcon_1024x1024.png" alt="TinySteps — a supportive digital platform for NICU dads" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">TinySteps</h3>
-                  <p className="text-gray-300 text-sm mb-4 flex-1">A digital platform for NICU dads to track progress, reflect, and stay connected. Built by InkFusionLabs.</p>
+                  <p className="text-gray-300 text-sm mb-2 flex-1">A digital platform for NICU dads to track progress, reflect, and stay connected. Built by InkFusionLabs.</p>
+                  <p className="text-gray-500 text-xs mb-4">Support-focused platform • Guided progress and reflection</p>
                   <div className="flex flex-wrap gap-3">
                     <a href="https://tinystepsnicudads.co.uk/" target="_blank" rel="noopener noreferrer" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1">
                       Visit TinySteps
@@ -267,13 +268,14 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* LettersBeyond - TODO: Add product screenshot when available */}
+                {/* LettersBeyond */}
                 <div className="group rounded-2xl bg-gradient-to-br from-amber-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-amber-500/20 hover:border-amber-500/40 transition-all card-hover flex flex-col">
                   <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
-                    <Image src="/LettersBeyond.icon/Assets/1024.png" alt="LettersBeyond — a creative web platform for personalised letters" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                    <Image src="/LettersBeyond.icon/Assets/1024.png" alt="LettersBeyond — a web platform for personalised letters" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">LettersBeyond</h3>
-                  <p className="text-gray-300 text-sm mb-4 flex-1">A web tool that helps people write personalised letters using guided prompts. Built by InkFusionLabs.</p>
+                  <p className="text-gray-300 text-sm mb-2 flex-1">A web tool that helps people write personalised letters using guided prompts. Built by InkFusionLabs.</p>
+                  <p className="text-gray-500 text-xs mb-4">Guided writing flow • Personalised letter creation</p>
                   <div className="flex flex-wrap gap-3">
                     <a href="https://www.lettersbeyond.co.uk/" target="_blank" rel="noopener noreferrer" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1">
                       Visit LettersBeyond

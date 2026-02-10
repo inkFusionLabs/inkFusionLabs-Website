@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About — InkFusionLabs",
-  description: "InkFusionLabs is a small studio that designs and builds digital products. Apps, websites, and tools from start to finish.",
+  description: "We design and build apps, websites, and tools — from idea to launch.",
 };
 
 export default function AboutPage() {

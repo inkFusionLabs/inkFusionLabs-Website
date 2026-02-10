@@ -1,10 +1,10 @@
 {
-  "name": "InkFusionLabs - Freelance Tech Solutions",
+  "name": "InkFusionLabs — Digital Product Studio",
   "short_name": "InkFusionLabs",
-  "description": "Available for hire! Crafting innovative tech solutions with precision and passion. Custom web applications, iOS development, automation tools, and AI-powered solutions.",
+  "description": "We design and build apps, websites, and tools — from idea to launch.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
+  "background_color": "#0b1220",
   "theme_color": "#e50914",
   "orientation": "portrait-primary",
   "icons": [
@@ -24,17 +24,10 @@
   "categories": ["business", "productivity", "technology"],
   "shortcuts": [
     {
-      "name": "Hire Me",
-      "short_name": "Hire",
-      "description": "View freelancing services and rates",
-      "url": "/#freelancing",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Projects",
-      "short_name": "Projects",
-      "description": "View featured projects",
-      "url": "/#projects",
+      "name": "Products",
+      "short_name": "Products",
+      "description": "View our products",
+      "url": "/#products",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     },
     {
