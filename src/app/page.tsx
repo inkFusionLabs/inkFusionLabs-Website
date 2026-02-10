@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { BrandLogo } from "./components/BrandLogo";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,13 +62,13 @@ export default function Home() {
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "work", label: "Work" },
+    { id: "products", label: "Products" },
     { id: "contact", label: "Contact" },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white font-sans relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(229,9,20,0.1),transparent_50%)]" />
+    <div className="min-h-screen bg-[linear-gradient(180deg,#0b1220_0%,#0a0f1a_100%)] text-white font-sans relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(229,9,20,0.06),transparent_50%)]" />
       <div className="particles">
         {particles.map((particle, i) => (
           <div
@@ -85,18 +86,11 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-gray-900/90 backdrop-blur-md border-b border-gray-700/50" : "bg-transparent"
+        isScrolled ? "bg-[#0b1220]/95 backdrop-blur-md border-b border-white/5" : "bg-transparent"
       }`}>
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <span className="text-xl font-bold text-white">InkFusionLabs</span>
-            </Link>
+            <BrandLogo variant="nav" />
             <div className="hidden md:flex items-center gap-8">
               {navItems.map(({ id, label }) => (
                 <button
@@ -133,7 +127,7 @@ export default function Home() {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
-          <div className="absolute top-0 right-0 w-64 h-full bg-gray-900/95 backdrop-blur-md border-l border-gray-700/50">
+          <div className="absolute top-0 right-0 w-64 h-full bg-[#0b1220]/98 backdrop-blur-md border-l border-white/5">
             <div className="flex flex-col h-full">
               <div className="flex items-center justify-between p-4 border-b border-gray-700/50">
                 <span className="text-lg font-bold text-white">Menu</span>
@@ -166,26 +160,35 @@ export default function Home() {
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Hero */}
         <header id="home" className="flex flex-col items-center pt-32 pb-16 px-4 animate-fade-in">
-          <div className="relative group mb-8">
-            <div className="w-32 h-32 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-105 group-hover:shadow-red-500/25 card-hover">
-              <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+          <div className="w-full max-w-4xl flex flex-col md:flex-row md:items-center md:justify-center md:gap-12">
+            <div className="flex flex-col items-center md:items-end md:text-right flex-1">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white text-center md:text-right mb-4 animate-slide-up">
+                InkFusionLabs designs and builds digital products.
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide text-center md:text-right max-w-2xl animate-slide-up [animation-delay:200ms]">
+                A small studio. We build complete apps and websites from start to finish.
+              </p>
+            </div>
+            <div className="mt-8 md:mt-0 flex-shrink-0 animate-slide-up [animation-delay:100ms]">
+              <div className="relative h-24 w-24 md:h-32 md:w-32">
+                <Image
+                  src="/assets/brand/inkfusionlabs-logo-dark.png"
+                  alt="InkFusionLabs logo"
+                  fill
+                  className="object-contain"
+                  priority
+                  sizes="(max-width: 768px) 96px, 128px"
+                />
+              </div>
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white text-center mb-4 animate-slide-up">
-            InkFusionLabs builds thoughtful apps and modern web experiences.
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide text-center max-w-2xl animate-slide-up [animation-delay:200ms]">
-            We design and develop digital products that feel simple, fast, and human.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-10 animate-slide-up [animation-delay:400ms]">
             <button
-              onClick={() => scrollToSection("work")}
+              onClick={() => scrollToSection("products")}
               className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/25 cta-button"
               style={{ minHeight: '44px' }}
             >
-              Explore our work
+              Explore our products
             </button>
             <Link
               href="/about"
@@ -203,13 +206,13 @@ export default function Home() {
           <section id="what-we-build" className="w-full">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">What we build</h2>
-              <p className="text-gray-300 mb-8 max-w-2xl">Apps, websites, and products that solve real problems and feel right to use.</p>
+              <p className="text-gray-300 mb-8 max-w-2xl">Apps, websites, and tools. We take them from idea to launch.</p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                  { title: "Mobile apps", desc: "Native and cross-platform apps that users love." },
-                  { title: "Websites & platforms", desc: "Web experiences built for clarity and conversion." },
-                  { title: "Product design & UX", desc: "User-centred design that makes products feel right." },
-                  { title: "Prototypes & MVPs", desc: "Lean, fast builds to validate and iterate." },
+                  { title: "Apps", desc: "Mobile and web applications." },
+                  { title: "Websites", desc: "Sites that are clear and easy to use." },
+                  { title: "Prototypes", desc: "Early versions to test an idea." },
+                  { title: "Design", desc: "Interface and UX for the products we build." },
                 ].map((item) => (
                   <div key={item.title} className="p-5 bg-gray-700/50 rounded-xl card-hover">
                     <h3 className="font-semibold text-white mb-2">{item.title}</h3>
@@ -220,15 +223,15 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Our approach */}
+          {/* How we work */}
           <section id="approach" className="w-full">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Our approach</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">How we work</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {[
-                  { title: "Clarity", desc: "Simple UX. Clear scope. No jargon, no surprises." },
-                  { title: "Craft", desc: "Quality UI and reliable engineering. We care about the details." },
-                  { title: "Momentum", desc: "Iterate fast, ship often. We keep things moving." },
+                  { title: "Define the problem", desc: "We start with what needs to exist and why." },
+                  { title: "Design and build", desc: "We do both. No handoffs between teams." },
+                  { title: "Launch and improve", desc: "We ship, then refine based on use." },
                 ].map((item) => (
                   <div key={item.title} className="p-6 bg-gray-700/50 rounded-xl card-hover">
                     <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
@@ -239,20 +242,20 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Featured work */}
-          <section id="work" className="w-full">
+          {/* Products by InkFusionLabs */}
+          <section id="products" className="w-full">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Featured work</h2>
-              <p className="text-gray-400 mb-8">A selection of products we&apos;ve designed and built.</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Products</h2>
+              <p className="text-gray-400 mb-8">Apps and websites we&apos;ve built and run.</p>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* TinySteps */}
+                {/* TinySteps - TODO: Add product screenshot when available */}
                 <div className="group rounded-2xl bg-gradient-to-br from-emerald-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-emerald-500/20 hover:border-emerald-500/40 transition-all card-hover flex flex-col">
                   <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
                     <Image src="/TinySteps.icon/Assets/AppIcon_1024x1024.png" alt="TinySteps — a supportive digital platform for NICU dads" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">TinySteps</h3>
-                  <p className="text-gray-300 text-sm mb-4 flex-1">A supportive digital platform designed to help NICU dads track progress, reflect, and stay connected during an intense and emotional journey.</p>
+                  <p className="text-gray-300 text-sm mb-4 flex-1">A digital platform for NICU dads to track progress, reflect, and stay connected. Built by InkFusionLabs.</p>
                   <div className="flex flex-wrap gap-3">
                     <a href="https://tinystepsnicudads.co.uk/" target="_blank" rel="noopener noreferrer" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1">
                       Visit TinySteps
@@ -264,13 +267,13 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* LettersBeyond */}
+                {/* LettersBeyond - TODO: Add product screenshot when available */}
                 <div className="group rounded-2xl bg-gradient-to-br from-amber-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-amber-500/20 hover:border-amber-500/40 transition-all card-hover flex flex-col">
                   <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
                     <Image src="/LettersBeyond.icon/Assets/1024.png" alt="LettersBeyond — a creative web platform for personalised letters" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">LettersBeyond</h3>
-                  <p className="text-gray-300 text-sm mb-4 flex-1">A creative web platform that helps people craft thoughtful, personalised letters through guided prompts and structured flow.</p>
+                  <p className="text-gray-300 text-sm mb-4 flex-1">A web tool that helps people write personalised letters using guided prompts. Built by InkFusionLabs.</p>
                   <div className="flex flex-wrap gap-3">
                     <a href="https://www.lettersbeyond.co.uk/" target="_blank" rel="noopener noreferrer" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1">
                       Visit LettersBeyond
@@ -281,17 +284,6 @@ export default function Home() {
                     </Link>
                   </div>
                 </div>
-
-                {/* OmniFusion Music */}
-                <div className="rounded-2xl bg-gradient-to-br from-purple-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-purple-500/20 card-hover">
-                  <div className="aspect-video rounded-xl bg-gradient-to-br from-purple-800/40 to-purple-900/30 mb-4 flex items-center justify-center" aria-hidden="true">
-                    <svg className="w-12 h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">OmniFusion Music</h3>
-                  <p className="text-gray-300 text-sm">A real-time music request system for DJs and events. Mobile-friendly guest form and dashboard with multi-DJ support.</p>
-                </div>
               </div>
             </div>
           </section>
@@ -300,10 +292,7 @@ export default function Home() {
           <section id="contact" className="w-full">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
               <h2 className="text-2xl font-bold text-white mb-4">Contact</h2>
-              <p className="text-gray-300 mb-6 max-w-xl">
-                Interested in what we do? We&apos;re happy to chat about projects, ideas, or collaboration.
-              </p>
-              <a
+                  <a
                 href="mailto:John.Constable@inkfusionlabs.co.uk"
                 className="inline-flex items-center gap-2 text-red-400 font-medium hover:text-red-300 transition-colors"
               >

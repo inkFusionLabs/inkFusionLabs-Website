@@ -1,28 +1,22 @@
 import Link from "next/link";
+import { BrandLogo } from "../../components/BrandLogo";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "TinySteps — InkFusionLabs",
-  description: "A supportive digital platform designed to help NICU dads track progress, reflect, and stay connected during an intense and emotional journey.",
+  description: "A digital platform for NICU dads to track progress, reflect, and stay connected. Built by InkFusionLabs.",
 };
 
 export default function TinyStepsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white font-sans relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(229,9,20,0.1),transparent_50%)]" />
+    <div className="min-h-screen bg-[linear-gradient(180deg,#0b1220_0%,#0a0f1a_100%)] text-white font-sans relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(229,9,20,0.06),transparent_50%)]" />
 
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-700/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0b1220]/95 backdrop-blur-md border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-white">InkFusionLabs</span>
-          </Link>
-          <Link href="/#work" className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors">
-            ← Back to work
+          <BrandLogo variant="nav" />
+          <Link href="/#products" className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors">
+            ← Back to products
           </Link>
         </div>
       </nav>
@@ -38,7 +32,7 @@ export default function TinyStepsPage() {
               TinySteps
             </h1>
             <p className="text-xl text-gray-300">
-              A supportive digital platform designed to help NICU dads track progress, reflect, and stay connected during an intense and emotional journey.
+              A digital platform for NICU dads to track progress, reflect, and stay connected.
             </p>
           </header>
 
@@ -52,13 +46,9 @@ export default function TinyStepsPage() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-4">Overview</h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              TinySteps is a purpose-driven digital platform created to support fathers navigating life with a baby in neonatal intensive care. 
-              The product focuses on emotional grounding, progress tracking, and reflection — helping users focus on small, meaningful steps during an overwhelming time.
-            </p>
             <p className="text-gray-300 leading-relaxed">
-              Designed with empathy and clarity at its core, TinySteps prioritises simplicity, calm visual design, and ease of use. 
-              The experience encourages reflection and consistency without adding pressure, providing a gentle digital companion for parents when it matters most.
+              TinySteps helps NICU dads track progress, reflect, and stay connected. It focuses on small steps and reflection. 
+              Built for clarity and ease of use. Available at tinystepsnicudads.co.uk.
             </p>
           </section>
 
@@ -95,10 +85,10 @@ export default function TinyStepsPage() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
             <Link
-              href="/#work"
+              href="/#products"
               className="inline-flex items-center gap-2 px-6 py-3 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-red-500 hover:text-red-400 transition-all"
             >
-              ← Back to work
+              ← Back to products
             </Link>
             <a
               href="mailto:John.Constable@inkfusionlabs.co.uk"

@@ -4,6 +4,8 @@
   --background: #0a0a0a;
   --foreground: #ededed;
   --accent: #e50914;
+  --brand-bg-from: #0b1220;
+  --brand-bg-to: #0a0f1a;
 }
 
 @theme inline {
