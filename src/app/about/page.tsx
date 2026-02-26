@@ -16,8 +16,8 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <BrandLogo variant="nav" />
           <div className="flex items-center gap-6">
-            <Link href="/#products" className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors">
-              Products
+            <Link href="/#work" className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors">
+              Our work
             </Link>
             <Link href="/#contact" className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors">
               Contact
@@ -57,10 +57,10 @@ export default function AboutPage() {
 
           <section className="pt-8 border-t border-gray-700/50 flex flex-wrap gap-4">
             <Link
-              href="/#products"
+              href="/#work"
               className="inline-flex items-center gap-2 px-6 py-3 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-red-500 hover:text-red-400 transition-all"
             >
-              View products
+              View our work
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

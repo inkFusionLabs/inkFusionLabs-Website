@@ -24,10 +24,10 @@
   "categories": ["business", "productivity", "technology"],
   "shortcuts": [
     {
-      "name": "Products",
-      "short_name": "Products",
-      "description": "View our products",
-      "url": "/#products",
+      "name": "Our work",
+      "short_name": "Our work",
+      "description": "View our work",
+      "url": "/#work",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     },
     {

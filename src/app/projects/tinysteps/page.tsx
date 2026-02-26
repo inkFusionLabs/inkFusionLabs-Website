@@ -15,8 +15,8 @@ export default function TinyStepsPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0b1220]/95 backdrop-blur-md border-b border-white/5">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <BrandLogo variant="nav" />
-          <Link href="/#products" className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors">
-            ← Back to products
+          <Link href="/#work" className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors">
+            ← Back to our work
           </Link>
         </div>
       </nav>
@@ -85,10 +85,10 @@ export default function TinyStepsPage() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
             <Link
-              href="/#products"
+              href="/#work"
               className="inline-flex items-center gap-2 px-6 py-3 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-red-500 hover:text-red-400 transition-all"
             >
-              ← Back to products
+              ← Back to our work
             </Link>
             <a
               href="mailto:contact@inkfusionlabs.co.uk"

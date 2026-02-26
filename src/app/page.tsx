@@ -62,7 +62,7 @@ export default function Home() {
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "products", label: "Products" },
+    { id: "work", label: "Our work" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -194,7 +194,7 @@ export default function Home() {
               Discuss your platform idea
             </button>
             <button
-              onClick={() => scrollToSection("products")}
+              onClick={() => scrollToSection("work")}
               className="px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-red-500 hover:text-red-400 transition-all duration-300 text-center cta-button"
               style={{ minHeight: '44px' }}
             >
@@ -224,11 +224,10 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Case studies / Proof */}
-          <section id="products" className="w-full">
+          {/* Our work / Case studies */}
+          <section id="work" className="w-full" aria-labelledby="our-work-heading">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">What we&apos;ve built</h2>
-              <p className="text-gray-400 mb-8">Production-ready platforms we design, build, and deploy — with real impact.</p>
+              <h2 id="our-work-heading" className="text-2xl md:text-3xl font-bold text-white mb-8">Our work</h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 {/* TinySteps NICU Dads */}
@@ -324,10 +323,10 @@ export default function Home() {
         {/* Footer */}
         <footer className="text-center py-10 text-gray-400 text-sm">
           <span>&copy; {new Date().getFullYear()} InkFusionLabs</span>
-          <div className="flex items-center justify-center gap-4 mt-3 text-xs">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-3 text-xs">
             <Link href="/privacy" className="hover:text-red-400 transition-colors">Privacy</Link>
-            <span className="text-gray-600">·</span>
-            <a href="mailto:contact@inkfusionlabs.co.uk" className="hover:text-red-400 transition-colors">Contact</a>
+            <span className="text-gray-600" aria-hidden="true">·</span>
+            <a href="mailto:contact@inkfusionlabs.co.uk" className="hover:text-red-400 transition-colors">contact@inkfusionlabs.co.uk</a>
           </div>
         </footer>
       </div>
