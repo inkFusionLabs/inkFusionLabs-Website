@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "InkFusionLabs — Digital Product Studio",
-  description: "We design and build apps, websites, and tools — from idea to launch.",
-  keywords: ["InkFusionLabs", "app development", "website development", "product design", "mobile apps", "web apps", "UK studio"],
+  title: "InkFusionLabs — Mission-Driven Platform Studio",
+  description: "We build meaningful digital platforms for charities, communities, and ambitious early-stage companies. Production-ready products — not brochure sites.",
+  keywords: ["InkFusionLabs", "platform studio", "charity digital", "startup MVP", "digital products", "UK studio", "founder-led"],
   authors: [{ name: "InkFusionLabs" }],
   creator: "InkFusionLabs",
   publisher: "InkFusionLabs",
@@ -25,15 +25,15 @@ export const metadata: Metadata = {
     title: "InkFusionLabs",
   },
   openGraph: {
-    title: "InkFusionLabs — Digital Product Studio",
-    description: "We design and build apps, websites, and tools — from idea to launch.",
+    title: "InkFusionLabs — Mission-Driven Platform Studio",
+    description: "We build meaningful digital platforms for charities, communities, and ambitious early-stage companies. Production-ready products — not brochure sites.",
     type: "website",
     locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
-    title: "InkFusionLabs — Digital Product Studio",
-    description: "We design and build apps, websites, and tools — from idea to launch.",
+    title: "InkFusionLabs — Mission-Driven Platform Studio",
+    description: "We build meaningful digital platforms for charities, communities, and ambitious early-stage companies. Production-ready products — not brochure sites.",
   },
 };
 

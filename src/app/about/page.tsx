@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About — InkFusionLabs",
-  description: "We design and build apps, websites, and tools — from idea to launch.",
+  description: "Founder-led studio shipping real products in production. We build meaningful digital platforms for charities, communities, and early-stage companies.",
 };
 
 export default function AboutPage() {
@@ -33,15 +33,15 @@ export default function AboutPage() {
               About InkFusionLabs
             </h1>
             <p className="text-xl text-gray-300">
-              A small studio that designs and builds digital products.
+              Founder-led studio shipping real products in production.
             </p>
           </header>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-4">What we do</h2>
             <p className="text-gray-300 leading-relaxed">
-              We build complete apps and websites. Design, development, and launch. We work on our own products — 
-              TinySteps, LettersBeyond — and take each from idea to a working product.
+              We build meaningful digital platforms — for charities, communities, and early-stage companies. 
+              We work on our own products — TinySteps, LettersBeyond — and take each from idea to a working product in production.
             </p>
           </section>
 
@@ -66,7 +66,7 @@ export default function AboutPage() {
               </svg>
             </Link>
             <a
-              href="mailto:John.Constable@inkfusionlabs.co.uk"
+              href="mailto:contact@inkfusionlabs.co.uk"
               className="inline-flex items-center gap-2 px-6 py-3 text-gray-400 font-medium hover:text-red-400 transition-colors"
             >
               Email

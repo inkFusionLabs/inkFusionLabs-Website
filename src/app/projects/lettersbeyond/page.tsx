@@ -91,10 +91,10 @@ export default function LettersBeyondPage() {
               ← Back to products
             </Link>
             <a
-              href="mailto:John.Constable@inkfusionlabs.co.uk"
+              href="mailto:contact@inkfusionlabs.co.uk"
               className="inline-flex items-center gap-2 px-6 py-3 text-gray-400 font-medium hover:text-red-400 transition-colors"
             >
-              Get in touch
+              Discuss your platform idea
             </a>
           </section>
         </article>
