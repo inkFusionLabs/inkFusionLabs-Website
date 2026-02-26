@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "InkFusionLabs — Mission-Driven Platform Studio",
-  description: "We build meaningful digital platforms for charities, communities, and ambitious early-stage companies. Production-ready products — not brochure sites.",
-  keywords: ["InkFusionLabs", "platform studio", "charity digital", "startup MVP", "digital products", "UK studio", "founder-led"],
+  title: "InkFusionLabs — Websites for self-employed & small business",
+  description: "Websites that win trust and bring in enquiries. Built for self-employed people and small businesses. Fast, mobile-first, SEO-ready.",
+  keywords: ["InkFusionLabs", "small business website", "self-employed", "freelancer website", "UK web design", "lead generation", "founder-led"],
   authors: [{ name: "InkFusionLabs" }],
   creator: "InkFusionLabs",
   publisher: "InkFusionLabs",
@@ -25,15 +25,15 @@ export const metadata: Metadata = {
     title: "InkFusionLabs",
   },
   openGraph: {
-    title: "InkFusionLabs — Mission-Driven Platform Studio",
-    description: "We build meaningful digital platforms for charities, communities, and ambitious early-stage companies. Production-ready products — not brochure sites.",
+    title: "InkFusionLabs — Websites for self-employed & small business",
+    description: "Websites that win trust and bring in enquiries. Built for self-employed people and small businesses. Fast, mobile-first, SEO-ready.",
     type: "website",
     locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
-    title: "InkFusionLabs — Mission-Driven Platform Studio",
-    description: "We build meaningful digital platforms for charities, communities, and ambitious early-stage companies. Production-ready products — not brochure sites.",
+    title: "InkFusionLabs — Websites for self-employed & small business",
+    description: "Websites that win trust and bring in enquiries. Built for self-employed people and small businesses. Fast, mobile-first, SEO-ready.",
   },
 };
 

@@ -91,10 +91,10 @@ export default function TinyStepsPage() {
               ← Back to our work
             </Link>
             <a
-              href="mailto:contact@inkfusionlabs.co.uk"
+              href="mailto:contact@inkfusionlabs.co.uk?subject=Free%20website%20review"
               className="inline-flex items-center gap-2 px-6 py-3 text-gray-400 font-medium hover:text-red-400 transition-colors"
             >
-              Discuss your platform idea
+              Get a free website review
             </a>
           </section>
         </article>

@@ -62,7 +62,7 @@ export default function Home() {
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "work", label: "Our work" },
+    { id: "work", label: "Examples" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -175,13 +175,13 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 animate-slide-up [animation-delay:100ms]">
-                We build meaningful digital platforms.
+                Websites that win trust and bring in enquiries.
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide max-w-2xl animate-slide-up [animation-delay:200ms]">
-                For charities, communities, and ambitious early-stage companies.
+                Built for self-employed people and small businesses who want to look professional and get more leads.
               </p>
               <p className="text-base md:text-lg text-gray-400 font-light mt-3 max-w-2xl animate-slide-up [animation-delay:300ms]">
-                We design, build, and launch production-ready products — not brochure sites.
+                Fast, mobile-first, SEO-ready — designed to convert visitors into customers.
               </p>
             </div>
           </div>
@@ -191,29 +191,29 @@ export default function Home() {
               className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/25 cta-button"
               style={{ minHeight: '44px' }}
             >
-              Discuss your platform idea
+              Get a free website review
             </button>
             <button
               onClick={() => scrollToSection("work")}
               className="px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-red-500 hover:text-red-400 transition-all duration-300 text-center cta-button"
               style={{ minHeight: '44px' }}
             >
-              See our work
+              See examples
             </button>
           </div>
         </header>
 
         {/* Main Content */}
         <main className="flex-1 flex flex-col items-center gap-16 w-full max-w-6xl mx-auto px-4 pb-20">
-          {/* Who we work with */}
-          <section id="who-we-work-with" className="w-full">
+          {/* Who we build for */}
+          <section id="who-we-build-for" className="w-full">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Who we work with</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Who we build for</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { title: "Charities & Community Organisations", desc: "Secure, accessible platforms designed for impact and real-world use." },
-                  { title: "Startups & Founders", desc: "MVPs and production-ready platforms built to launch fast and scale." },
-                  { title: "Small Businesses", desc: "Modern websites and digital tools built properly — not just templates." },
+                  { title: "Trades & local services", desc: "Clean, fast sites that turn searches into calls." },
+                  { title: "Coaches, therapists & consultants", desc: "Credibility-led design with clear enquiry flows." },
+                  { title: "Small businesses & startups", desc: "Modern web presence and lightweight tools to grow." },
                 ].map((item) => (
                   <div key={item.title} className="p-6 bg-gray-700/50 rounded-xl card-hover">
                     <h3 className="font-semibold text-white mb-2">{item.title}</h3>
@@ -224,20 +224,74 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Our work / Case studies */}
-          <section id="work" className="w-full" aria-labelledby="our-work-heading">
+          {/* What you get */}
+          <section id="what-you-get" className="w-full">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
-              <h2 id="our-work-heading" className="text-2xl md:text-3xl font-bold text-white mb-8">Our work</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">What you get</h2>
+              <ul className="grid md:grid-cols-2 gap-x-8 gap-y-3 text-gray-300">
+                {[
+                  "Mobile-first design",
+                  "Speed & performance optimised",
+                  "SEO foundations (titles, metadata, indexing basics)",
+                  "Clear calls-to-action + enquiry form",
+                  "Analytics setup (basic)",
+                  "Secure deployment & maintenance option",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-red-400 mt-1 shrink-0" aria-hidden="true">—</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* Simple packages */}
+          <section id="packages" className="w-full">
+            <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Simple packages</h2>
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
+                <div className="p-6 bg-gray-700/50 rounded-xl card-hover">
+                  <h3 className="font-semibold text-white mb-2">Starter Site</h3>
+                  <ul className="text-sm text-gray-400 space-y-1">
+                    <li>1–5 pages</li>
+                    <li>Contact form</li>
+                    <li>Mobile-first</li>
+                  </ul>
+                </div>
+                <div className="p-6 bg-gray-700/50 rounded-xl card-hover">
+                  <h3 className="font-semibold text-white mb-2">Growth Site</h3>
+                  <ul className="text-sm text-gray-400 space-y-1">
+                    <li>Everything in Starter</li>
+                    <li>SEO foundations + local SEO basics</li>
+                    <li>Extra conversion sections (testimonials, FAQs)</li>
+                  </ul>
+                </div>
+                <div className="p-6 bg-gray-700/50 rounded-xl card-hover">
+                  <h3 className="font-semibold text-white mb-2">Care Plan</h3>
+                  <ul className="text-sm text-gray-400 space-y-1">
+                    <li>Updates + monitoring</li>
+                    <li>Small content changes</li>
+                    <li>Security & backups</li>
+                  </ul>
+                </div>
+              </div>
+              <p className="text-gray-400 text-sm">Not sure what you need? We&apos;ll recommend the right option after a quick chat.</p>
+            </div>
+          </section>
+
+          {/* Work & proof */}
+          <section id="work" className="w-full" aria-labelledby="work-heading">
+            <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
+              <h2 id="work-heading" className="text-2xl md:text-3xl font-bold text-white mb-6">Work & proof</h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                {/* TinySteps NICU Dads */}
                 <div className="group rounded-2xl bg-gradient-to-br from-emerald-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-emerald-500/20 hover:border-emerald-500/40 transition-all card-hover flex flex-col">
                   <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
                     <Image src="/TinySteps.icon/Assets/AppIcon_1024x1024.png" alt="TinySteps NICU Dads — platform for fathers in neonatal care" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">TinySteps NICU Dads</h3>
-                  <p className="text-gray-300 text-sm mb-3 flex-1">A platform built to support fathers navigating neonatal intensive care. Now engaging with hospitals and national charities.</p>
-                  <p className="text-gray-500 text-xs mb-4">Design • Build • Deploy</p>
+                  <p className="text-gray-300 text-sm mb-3 flex-1">Built from lived experience. A real-world platform supporting NICU dads — now gaining attention from hospitals and charities.</p>
                   <div className="flex flex-wrap gap-3">
                     <a href="https://tinystepsnicudads.co.uk/" target="_blank" rel="noopener noreferrer" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1">
                       Visit site
@@ -249,14 +303,12 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* LettersBeyond */}
                 <div className="group rounded-2xl bg-gradient-to-br from-amber-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-amber-500/20 hover:border-amber-500/40 transition-all card-hover flex flex-col">
                   <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
                     <Image src="/LettersBeyond.icon/Assets/1024.png" alt="LettersBeyond — grief-focused digital space for remembrance" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">LettersBeyond</h3>
-                  <p className="text-gray-300 text-sm mb-3 flex-1">A grief-focused digital space designed for remembrance and emotional expression. Currently in discussions with bereavement organisations.</p>
-                  <p className="text-gray-500 text-xs mb-4">Design • Build • Deploy</p>
+                  <p className="text-gray-300 text-sm mb-3 flex-1">A grief-focused platform built from personal experience, designed for remembrance and support — with interest from bereavement organisations.</p>
                   <div className="flex flex-wrap gap-3">
                     <a href="https://www.lettersbeyond.co.uk/" target="_blank" rel="noopener noreferrer" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1">
                       Visit site
@@ -268,6 +320,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+              <p className="text-gray-400 text-sm mt-6">Alongside public projects, we build commercial websites for self-employed people and small businesses.</p>
             </div>
           </section>
 
@@ -277,11 +331,11 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Why InkFusionLabs</h2>
               <ul className="space-y-3 text-gray-300">
                 {[
-                  "Product-first thinking",
-                  "Real-world platforms, not brochure sites",
-                  "Experience building in sensitive sectors (health & grief)",
-                  "Clean, scalable architecture",
-                  "Founder-led and deeply involved",
+                  "Built to convert — not just look nice",
+                  "Fast, clean, mobile-first builds",
+                  "Straightforward process and honest advice",
+                  "Founder-led: you work directly with the person building it",
+                  "Real products shipped in production",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <span className="text-red-400 mt-1 shrink-0" aria-hidden="true">—</span>
@@ -295,15 +349,15 @@ export default function Home() {
           {/* Final CTA */}
           <section id="contact" className="w-full">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Let&apos;s build something meaningful.</h2>
-              <p className="text-gray-400 mb-8">Tell us what you&apos;re building — we&apos;ll help you ship it.</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Want more enquiries from your website?</h2>
+              <p className="text-gray-400 mb-8">Send your current site (or your idea) and we&apos;ll suggest the highest-impact improvements.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="mailto:contact@inkfusionlabs.co.uk"
+                  href="mailto:contact@inkfusionlabs.co.uk?subject=Free%20website%20review"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/25 cta-button"
                   style={{ minHeight: "44px" }}
                 >
-                  Discuss your platform idea
+                  Get a free website review
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -313,7 +367,7 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-red-500 hover:text-red-400 transition-all duration-300 text-center cta-button"
                   style={{ minHeight: "44px" }}
                 >
-                  Email us
+                  Email contact@inkfusionlabs.co.uk
                 </a>
               </div>
             </div>

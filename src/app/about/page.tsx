@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About — InkFusionLabs",
-  description: "Founder-led studio shipping real products in production. We build meaningful digital platforms for charities, communities, and early-stage companies.",
+  description: "Founder-led studio building websites for self-employed people and small businesses. Fast, mobile-first, built to win trust and bring in enquiries.",
 };
 
 export default function AboutPage() {
@@ -17,7 +17,7 @@ export default function AboutPage() {
           <BrandLogo variant="nav" />
           <div className="flex items-center gap-6">
             <Link href="/#work" className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors">
-              Our work
+              Examples
             </Link>
             <Link href="/#contact" className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors">
               Contact
@@ -33,15 +33,15 @@ export default function AboutPage() {
               About InkFusionLabs
             </h1>
             <p className="text-xl text-gray-300">
-              Founder-led studio shipping real products in production.
+              Founder-led studio building websites that win trust and bring in enquiries.
             </p>
           </header>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-4">What we do</h2>
             <p className="text-gray-300 leading-relaxed">
-              We build meaningful digital platforms — for charities, communities, and early-stage companies. 
-              We work on our own products — TinySteps, LettersBeyond — and take each from idea to a working product in production.
+              We build websites for self-employed people and small businesses — fast, mobile-first, and designed to convert visitors into customers. 
+              We also ship our own products (TinySteps, LettersBeyond) from idea to production, and use that experience to build real, reliable sites for clients.
             </p>
           </section>
 
@@ -66,10 +66,10 @@ export default function AboutPage() {
               </svg>
             </Link>
             <a
-              href="mailto:contact@inkfusionlabs.co.uk"
+              href="mailto:contact@inkfusionlabs.co.uk?subject=Free%20website%20review"
               className="inline-flex items-center gap-2 px-6 py-3 text-gray-400 font-medium hover:text-red-400 transition-colors"
             >
-              Email
+              Get a free website review
             </a>
           </section>
         </article>

@@ -1,7 +1,7 @@
 {
-  "name": "InkFusionLabs — Digital Product Studio",
+  "name": "InkFusionLabs — Websites for self-employed & small business",
   "short_name": "InkFusionLabs",
-  "description": "We design and build apps, websites, and tools — from idea to launch.",
+  "description": "Websites that win trust and bring in enquiries. Built for self-employed people and small businesses.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0b1220",
@@ -24,16 +24,16 @@
   "categories": ["business", "productivity", "technology"],
   "shortcuts": [
     {
-      "name": "Our work",
-      "short_name": "Our work",
-      "description": "View our work",
+      "name": "Examples",
+      "short_name": "Examples",
+      "description": "See examples",
       "url": "/#work",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Contact",
       "short_name": "Contact",
-      "description": "Get in touch",
+      "description": "Get a free website review",
       "url": "/#contact",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     }
