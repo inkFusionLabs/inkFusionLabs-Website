@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BrandLogo } from "./components/BrandLogo";
 
-// Replace with your Formspree form ID from https://formspree.io (e.g. xyzabcde)
-const FORMSPREE_FORM_ID = "YOUR_FORM_ID";
+const FORMSPREE_FORM_ID = "mvzblnwr";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
