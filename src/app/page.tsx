@@ -5,12 +5,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { BrandLogo } from "./components/BrandLogo";
 
+// Replace with your Formspree form ID from https://formspree.io (e.g. xyzabcde)
+const FORMSPREE_FORM_ID = "YOUR_FORM_ID";
+
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [particles, setParticles] = useState<Array<{left: string, top: string, delay: string, duration: string}>>([]);
+
+  const [formName, setFormName] = useState("");
+  const [formEmail, setFormEmail] = useState("");
+  const [formNeed, setFormNeed] = useState("");
+  const [formMessage, setFormMessage] = useState("");
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(false);
 
   useEffect(() => {
     setParticles(
@@ -65,6 +75,40 @@ export default function Home() {
     { id: "work", label: "Examples" },
     { id: "contact", label: "Contact" },
   ];
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (formSubmitting) return;
+    setFormSubmitting(true);
+    setFormSuccess(false);
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formName,
+          email: formEmail,
+          "What do you need?": formNeed,
+          message: formMessage,
+          _replyto: formEmail,
+          _subject: "Free website review request",
+        }),
+      });
+      if (res.ok) {
+        setFormSuccess(true);
+        setFormName("");
+        setFormEmail("");
+        setFormNeed("");
+        setFormMessage("");
+      } else {
+        throw new Error("Submit failed");
+      }
+    } catch {
+      setFormSuccess(false);
+    } finally {
+      setFormSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#0b1220_0%,#0a0f1a_100%)] text-white font-sans relative overflow-hidden">
@@ -188,8 +232,8 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 mt-10 animate-slide-up [animation-delay:400ms]">
             <button
               onClick={() => scrollToSection("contact")}
-              className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/25 cta-button"
-              style={{ minHeight: '44px' }}
+              className="px-8 py-4 bg-[#ff1f1f] text-white font-bold rounded-xl hover:bg-[#e01a1a] hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400 transition-all duration-200"
+              style={{ minHeight: "44px", color: "#ffffff" }}
             >
               Get a free website review
             </button>
@@ -351,11 +395,11 @@ export default function Home() {
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-700/50 card-hover">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Want more enquiries from your website?</h2>
               <p className="text-gray-400 mb-8">Send your current site (or your idea) and we&apos;ll suggest the highest-impact improvements.</p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <a
-                  href="mailto:contact@inkfusionlabs.co.uk?subject=Free%20website%20review"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/25 cta-button"
-                  style={{ minHeight: "44px" }}
+                  href="#contact-form"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#ff1f1f] text-white font-bold rounded-xl hover:bg-[#e01a1a] hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400 transition-all duration-200"
+                  style={{ minHeight: "44px", color: "#ffffff" }}
                 >
                   Get a free website review
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -364,11 +408,98 @@ export default function Home() {
                 </a>
                 <a
                   href="mailto:contact@inkfusionlabs.co.uk"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-red-500 hover:text-red-400 transition-all duration-300 text-center cta-button"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-red-500 hover:text-red-400 transition-all duration-300 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
                   style={{ minHeight: "44px" }}
                 >
                   Email contact@inkfusionlabs.co.uk
                 </a>
+              </div>
+
+              {/* Contact form */}
+              <div id="contact-form" className="rounded-2xl bg-gray-900/80 border border-red-500/30 p-6 md:p-8">
+                <h3 className="text-xl font-bold text-white mb-6">Get your free website review</h3>
+                {formSuccess ? (
+                  <p className="text-gray-300 py-4" role="status">
+                    Thanks — I&apos;ll review your site and get back to you within 48 hours.
+                  </p>
+                ) : (
+                  <form onSubmit={handleContactSubmit} className="flex flex-col gap-5">
+                    <div>
+                      <label htmlFor="contact-name" className="block text-sm font-medium text-gray-300 mb-1">
+                        Name <span className="text-red-400" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        id="contact-name"
+                        type="text"
+                        name="name"
+                        required
+                        value={formName}
+                        onChange={(e) => setFormName(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        placeholder="Your name"
+                        autoComplete="name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="contact-email" className="block text-sm font-medium text-gray-300 mb-1">
+                        Email <span className="text-red-400" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        id="contact-email"
+                        type="email"
+                        name="email"
+                        required
+                        value={formEmail}
+                        onChange={(e) => setFormEmail(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        placeholder="you@example.com"
+                        autoComplete="email"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="contact-need" className="block text-sm font-medium text-gray-300 mb-1">
+                        What do you need?
+                      </label>
+                      <select
+                        id="contact-need"
+                        name="need"
+                        value={formNeed}
+                        onChange={(e) => setFormNeed(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                      >
+                        <option value="">Select an option</option>
+                        <option value="New website">New website</option>
+                        <option value="Website redesign">Website redesign</option>
+                        <option value="Speed / SEO improvements">Speed / SEO improvements</option>
+                        <option value="Not sure yet">Not sure yet</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="contact-message" className="block text-sm font-medium text-gray-300 mb-1">
+                        Message <span className="text-red-400" aria-hidden="true">*</span>
+                      </label>
+                      <textarea
+                        id="contact-message"
+                        name="message"
+                        required
+                        rows={4}
+                        value={formMessage}
+                        onChange={(e) => setFormMessage(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-y min-h-[120px]"
+                        placeholder="Tell us about your site or project..."
+                        autoComplete="off"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={formSubmitting}
+                      className="px-8 py-4 bg-[#ff1f1f] text-white font-bold rounded-xl hover:bg-[#e01a1a] hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400 transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+                      style={{ minHeight: "44px", color: "#ffffff" }}
+                    >
+                      {formSubmitting ? "Sending…" : "Send Request"}
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </section>
