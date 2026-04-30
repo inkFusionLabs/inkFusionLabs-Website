@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BrandLogo } from "../../components/BrandLogo";
 import type { Metadata } from "next";
 
@@ -36,42 +37,103 @@ export default function LettersBeyondPage() {
             </p>
           </header>
 
-          {/* Visual placeholder - TODO: Replace with real screenshots */}
-          <section className="mb-12">
-            <div className="aspect-video rounded-2xl bg-gradient-to-br from-amber-900/40 to-amber-800/20 border border-amber-500/20 flex items-center justify-center">
-              <span className="text-6xl" aria-hidden="true">✉️</span>
-            </div>
-            <p className="text-center text-sm text-gray-500 mt-3">App interface placeholder — add real screenshots here</p>
-          </section>
-
+          {/* Overview */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-4">Overview</h2>
             <p className="text-gray-300 leading-relaxed">
-              LettersBeyond helps people write personalised letters. Users answer guided prompts about the recipient and occasion, 
-              then get a draft they can edit and send. Available at lettersbeyond.co.uk.
+              LettersBeyond is a focused writing space for the messages that matter most. It helps you turn unfinished
+              drafts and unsent notes into thoughtful letters you&apos;re glad you finally wrote.
             </p>
           </section>
 
+          {/* The problem */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-4">The problem</h2>
+            <p className="text-gray-300 leading-relaxed">
+              When you need to say something important, a blank page can feel intimidating. You know what you want to say,
+              but everything you write sounds either too formal, too casual, or not quite honest enough. It&apos;s easy to
+              put it off, send something short, or say nothing at all.
+            </p>
+          </section>
+
+          {/* The solution */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-4">The solution</h2>
+            <p className="text-gray-300 leading-relaxed">
+              LettersBeyond gives you gentle structure when you need it most. Instead of facing an empty box, you answer
+              a few calm, human questions about the person you&apos;re writing to and why. From those reflections, the app
+              creates a full first draft that sounds like you &mdash; something you can adjust, cut back, or build on until
+              it feels exactly right.
+            </p>
+          </section>
+
+          {/* Key features */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-4">Key features</h2>
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">—</span>
-                Guided prompts for recipient and occasion
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">—</span>
-                Personalised draft generation
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">—</span>
-                Calm, focused writing experience
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">—</span>
-                Structured output for expressive letters
-              </li>
-            </ul>
+            <div className="grid md:grid-cols-2 gap-4 text-gray-300">
+              <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-700/60">
+                <h3 className="font-semibold text-white mb-1">Guided prompts, not templates</h3>
+                <p className="text-sm text-gray-400">
+                  Short, simple questions draw out your memories, feelings, and reasons for writing, instead of dropping you
+                  into a pre-written script.
+                </p>
+              </div>
+              <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-700/60">
+                <h3 className="font-semibold text-white mb-1">Personalised drafts</h3>
+                <p className="text-sm text-gray-400">
+                  Your answers are shaped into a full letter that sounds warm and natural, ready for you to edit into your
+                  own voice.
+                </p>
+              </div>
+              <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-700/60">
+                <h3 className="font-semibold text-white mb-1">Calm writing environment</h3>
+                <p className="text-sm text-gray-400">
+                  A quiet interface with no clutter, designed to help you stay with your thoughts and the person you&apos;re
+                  writing to.
+                </p>
+              </div>
+              <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-700/60">
+                <h3 className="font-semibold text-white mb-1">Space to reread and refine</h3>
+                <p className="text-sm text-gray-400">
+                  Take your time, make small edits, and come back to your letter until you&apos;re happy to put your name
+                  to it.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Screenshots */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-4">Screenshots</h2>
+            <div className="space-y-4">
+              <div className="aspect-video rounded-2xl overflow-hidden border border-amber-500/20 bg-gray-900/60 relative">
+                <Image
+                  src="/assets/new_lb.png"
+                  alt="LettersBeyond app interface"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* Who it's for */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-4">Who it&apos;s for</h2>
+            <p className="text-gray-300 leading-relaxed">
+              LettersBeyond is for anyone who wants to go beyond a quick message &mdash; whether you&apos;re saying thank
+              you, I&apos;m sorry, I miss you, I love you, or simply that someone matters more than they realise.
+            </p>
+          </section>
+
+          {/* Outcome-style closing */}
+          <section className="pt-8 border-t border-gray-700/50">
+            <h2 className="text-2xl font-bold text-white mb-4">Start your letter</h2>
+            <p className="text-gray-300 leading-relaxed">
+              There&apos;s probably at least one person you&apos;ve been meaning to write to. LettersBeyond makes it a
+              little easier to finally do it &mdash; with words that feel honest, thoughtful, and genuinely yours.
+            </p>
           </section>
 
           <section className="pt-8 border-t border-gray-700/50 flex flex-wrap gap-4">

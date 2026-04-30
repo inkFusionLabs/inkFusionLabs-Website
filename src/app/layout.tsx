@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   publisher: "InkFusionLabs",
   robots: "index, follow",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/newtslogo.png",
+    shortcut: "/newtslogo.png",
+    apple: "/newtslogo.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

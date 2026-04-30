@@ -1,13 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { BrandLogo } from "./components/BrandLogo";
 
 const FORMSPREE_FORM_ID = "mvzblnwr";
 
 export default function Home() {
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -20,6 +22,9 @@ export default function Home() {
   const [formMessage, setFormMessage] = useState("");
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formSuccess, setFormSuccess] = useState(false);
+  const [formSentFeedback, setFormSentFeedback] = useState(false);
+  const [formError, setFormError] = useState(false);
+  const successMessageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setParticles(
@@ -80,6 +85,7 @@ export default function Home() {
     if (formSubmitting) return;
     setFormSubmitting(true);
     setFormSuccess(false);
+    setFormError(false);
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
         method: "POST",
@@ -94,20 +100,35 @@ export default function Home() {
         }),
       });
       if (res.ok) {
-        setFormSuccess(true);
         setFormName("");
         setFormEmail("");
         setFormNeed("");
         setFormMessage("");
+        setFormSentFeedback(true);
       } else {
         throw new Error("Submit failed");
       }
     } catch {
-      setFormSuccess(false);
+      setFormError(true);
     } finally {
       setFormSubmitting(false);
     }
   };
+
+  useEffect(() => {
+    if (!formSentFeedback) return;
+    const t = window.setTimeout(() => {
+      setFormSuccess(true);
+      setFormSentFeedback(false);
+    }, 3000);
+    return () => window.clearTimeout(t);
+  }, [formSentFeedback]);
+
+  useEffect(() => {
+    if (formSuccess && successMessageRef.current) {
+      successMessageRef.current.focus({ preventScroll: false });
+    }
+  }, [formSuccess]);
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#0b1220_0%,#0a0f1a_100%)] text-white font-sans relative overflow-hidden">
@@ -329,37 +350,150 @@ export default function Home() {
               <h2 id="work-heading" className="text-2xl md:text-3xl font-bold text-white mb-6">Work & proof</h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="group rounded-2xl bg-gradient-to-br from-emerald-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-emerald-500/20 hover:border-emerald-500/40 transition-all card-hover flex flex-col">
+                <div
+                  className="group rounded-2xl bg-gradient-to-br from-violet-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-violet-500/20 hover:border-violet-500/40 transition-all card-hover flex flex-col cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b1220]"
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => router.push("/projects/exocare")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      router.push("/projects/exocare");
+                    }
+                  }}
+                >
                   <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
-                    <Image src="/TinySteps.icon/Assets/AppIcon_1024x1024.png" alt="TinySteps NICU Dads — platform for fathers in neonatal care" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                    <Image
+                      src="/non alpha .png"
+                      alt="Exocare — exotic pet care tracking app"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">Exocare</h3>
+                  <p className="text-gray-300 text-sm mb-3">
+                    Exotic pet care tracking, simplified.
+                  </p>
+                  <p className="text-gray-300 text-sm mb-3">
+                    Exocare is an iOS app designed for exotic pet owners to track feeding, cleaning, health, and daily care. Manage multiple pets, log activities quickly, and monitor care through a simple timeline and dashboard.
+                  </p>
+                  <ul className="text-gray-300 text-sm mb-3 flex-1 space-y-1">
+                    <li>- Pet profiles for reptiles, birds, fish, amphibians, insects, and more</li>
+                    <li>- Feeding logs with outcomes (ate all, ate some, refused)</li>
+                    <li>- Cleaning and habitat maintenance tracking</li>
+                    <li>- Health notes, supplements, and weight checks</li>
+                    <li>- Timeline view of all care activity</li>
+                    <li>- Dashboard with reminders and overdue tasks</li>
+                  </ul>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="text-violet-400 text-sm font-medium inline-flex items-center gap-1">
+                      iOS App
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="group rounded-2xl bg-gradient-to-br from-red-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-red-500/20 hover:border-red-500/40 transition-all card-hover flex flex-col cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b1220]"
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => router.push("/projects/passpoint")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      router.push("/projects/passpoint");
+                    }
+                  }}
+                >
+                  <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
+                    <Image
+                      src="/PassPoint.png"
+                      alt="PassPoint — café management system barista interface"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">PassPoint — Café Management System</h3>
+                  <p className="text-gray-300 text-sm mb-3 flex-1">
+                    A real-time café management platform used daily at The Roastery Café. Designed to streamline orders, kitchen flow, and staff operations with a fast, intuitive interface.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href="/passpoint"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1"
+                      onClick={(e) => e.stopPropagation()}
+                      onKeyDown={(e) => e.stopPropagation()}
+                    >
+                      View system
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div
+                  className="group rounded-2xl bg-gradient-to-br from-emerald-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-emerald-500/20 hover:border-emerald-500/40 transition-all card-hover flex flex-col cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b1220]"
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => router.push("/projects/tinysteps")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      router.push("/projects/tinysteps");
+                    }
+                  }}
+                >
+                  <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
+                    <Image src="/newtslogo.png" alt="TinySteps NICU Dads — platform for fathers in neonatal care" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">TinySteps NICU Dads</h3>
                   <p className="text-gray-300 text-sm mb-3 flex-1">Built from lived experience. A real-world platform supporting NICU dads — now gaining attention from hospitals and charities.</p>
                   <div className="flex flex-wrap gap-3">
-                    <a href="https://tinystepsnicudads.co.uk/" target="_blank" rel="noopener noreferrer" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1">
+                    <a
+                      href="https://tinystepsnicudads.co.uk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1"
+                      onClick={(e) => e.stopPropagation()}
+                      onKeyDown={(e) => e.stopPropagation()}
+                    >
                       Visit site
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                     </a>
-                    <Link href="/projects/tinysteps" className="text-gray-400 text-sm font-medium hover:text-red-400 transition-colors">
-                      Read more
-                    </Link>
                   </div>
                 </div>
 
-                <div className="group rounded-2xl bg-gradient-to-br from-amber-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-amber-500/20 hover:border-amber-500/40 transition-all card-hover flex flex-col">
+                <div
+                  className="group rounded-2xl bg-gradient-to-br from-amber-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-amber-500/20 hover:border-amber-500/40 transition-all card-hover flex flex-col cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b1220]"
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => router.push("/projects/lettersbeyond")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      router.push("/projects/lettersbeyond");
+                    }
+                  }}
+                >
                   <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
-                    <Image src="/LettersBeyond.icon/Assets/1024.png" alt="LettersBeyond — grief-focused digital space for remembrance" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                    <Image src="/assets/new_lb.png" alt="LettersBeyond — grief-focused digital space for remembrance" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">LettersBeyond</h3>
                   <p className="text-gray-300 text-sm mb-3 flex-1">A grief-focused platform built from personal experience, designed for remembrance and support — with interest from bereavement organisations.</p>
                   <div className="flex flex-wrap gap-3">
-                    <a href="https://www.lettersbeyond.co.uk/" target="_blank" rel="noopener noreferrer" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1">
+                    <a
+                      href="https://www.lettersbeyond.co.uk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1"
+                      onClick={(e) => e.stopPropagation()}
+                      onKeyDown={(e) => e.stopPropagation()}
+                    >
                       Visit site
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                     </a>
-                    <Link href="/projects/lettersbeyond" className="text-gray-400 text-sm font-medium hover:text-red-400 transition-colors">
-                      Read more
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -418,11 +552,36 @@ export default function Home() {
               <div id="contact-form" className="rounded-2xl bg-gray-900/80 border border-red-500/30 p-6 md:p-8">
                 <h3 className="text-xl font-bold text-white mb-6">Get your free website review</h3>
                 {formSuccess ? (
-                  <p className="text-gray-300 py-4" role="status">
-                    Thanks — I&apos;ll review your site and get back to you within 48 hours.
-                  </p>
+                  <div
+                    ref={successMessageRef}
+                    tabIndex={-1}
+                    role="status"
+                    aria-live="polite"
+                    className="py-4 focus:outline-none"
+                  >
+                    <p className="font-bold text-white text-lg mb-2">Thanks — request received.</p>
+                    <p className="text-gray-300 mb-4">
+                      I&apos;ll personally review your website and reply within 48 hours with practical, high-impact improvements.
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      If you don&apos;t hear back within 48 hours, email{" "}
+                      <a href="mailto:contact@inkfusionlabs.co.uk" className="text-red-400 hover:text-red-300 transition-colors">
+                        contact@inkfusionlabs.co.uk
+                      </a>
+                      .
+                    </p>
+                  </div>
                 ) : (
                   <form onSubmit={handleContactSubmit} className="flex flex-col gap-5">
+                    {formError && (
+                      <p className="text-red-400 text-sm py-2 px-3 rounded-lg bg-red-500/10 border border-red-500/30" role="alert">
+                        Something went wrong — please try again or email{" "}
+                        <a href="mailto:contact@inkfusionlabs.co.uk" className="underline hover:no-underline">
+                          contact@inkfusionlabs.co.uk
+                        </a>
+                        .
+                      </p>
+                    )}
                     <div>
                       <label htmlFor="contact-name" className="block text-sm font-medium text-gray-300 mb-1">
                         Name <span className="text-red-400" aria-hidden="true">*</span>
@@ -495,7 +654,7 @@ export default function Home() {
                       className="px-8 py-4 bg-[#ff1f1f] text-white font-bold rounded-xl hover:bg-[#e01a1a] hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400 transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                       style={{ minHeight: "44px", color: "#ffffff" }}
                     >
-                      {formSubmitting ? "Sending…" : "Send Request"}
+                      {formSubmitting ? "Sending…" : formSentFeedback ? "Sent ✓" : "Send Request"}
                     </button>
                   </form>
                 )}
