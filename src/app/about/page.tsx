@@ -41,7 +41,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-white mb-4">What we do</h2>
             <p className="text-gray-300 leading-relaxed">
               We build websites for self-employed people and small businesses — fast, mobile-first, and designed to convert visitors into customers. 
-              We also ship our own products (TinySteps, LettersBeyond) from idea to production, and use that experience to build real, reliable sites for clients.
+              We also ship our own products from idea to production, and use that experience to build real, reliable sites for clients.
             </p>
           </section>
 

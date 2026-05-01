@@ -464,38 +464,6 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-
-                <div
-                  className="group rounded-2xl bg-gradient-to-br from-amber-900/30 via-gray-700/50 to-gray-800/50 p-6 border border-amber-500/20 hover:border-amber-500/40 transition-all card-hover flex flex-col cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b1220]"
-                  role="link"
-                  tabIndex={0}
-                  onClick={() => router.push("/projects/lettersbeyond")}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      router.push("/projects/lettersbeyond");
-                    }
-                  }}
-                >
-                  <div className="aspect-video rounded-xl overflow-hidden mb-4 relative bg-gray-800/50">
-                    <Image src="/assets/new_lb.png" alt="LettersBeyond — grief-focused digital space for remembrance" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">LettersBeyond</h3>
-                  <p className="text-gray-300 text-sm mb-3 flex-1">A grief-focused platform built from personal experience, designed for remembrance and support — with interest from bereavement organisations.</p>
-                  <div className="flex flex-wrap gap-3">
-                    <a
-                      href="https://www.lettersbeyond.co.uk/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1"
-                      onClick={(e) => e.stopPropagation()}
-                      onKeyDown={(e) => e.stopPropagation()}
-                    >
-                      Visit site
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                    </a>
-                  </div>
-                </div>
               </div>
 
               <p className="text-gray-400 text-sm mt-6">Alongside public projects, we build commercial websites for self-employed people and small businesses.</p>

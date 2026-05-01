@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BrandLogo } from "../../components/BrandLogo";
 import type { Metadata } from "next";
 
@@ -36,42 +37,84 @@ export default function TinyStepsPage() {
             </p>
           </header>
 
-          {/* Visual placeholder - TODO: Replace with real screenshots */}
-          <section className="mb-12">
-            <div className="aspect-video rounded-2xl bg-gradient-to-br from-emerald-900/40 to-emerald-800/20 border border-emerald-500/20 flex items-center justify-center">
-              <span className="text-6xl" aria-hidden="true">🌱</span>
-            </div>
-            <p className="text-center text-sm text-gray-500 mt-3">App interface placeholder — add real screenshots here</p>
-          </section>
-
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-4">Overview</h2>
             <p className="text-gray-300 leading-relaxed">
-              TinySteps helps NICU dads track progress, reflect, and stay connected. It focuses on small steps and reflection. 
-              Built for clarity and ease of use. Available at tinystepsnicudads.co.uk.
+              TinySteps helps NICU dads track progress, reflect, and stay connected. It focuses on small steps and
+              reflection, with a calm, focused experience designed for a difficult journey.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-4">Key features</h2>
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">—</span>
-                Progress tracking and emotional reflection
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">—</span>
-                Calm, focused design for a difficult journey
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">—</span>
-                Small, meaningful steps without added pressure
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-red-400 mt-1">—</span>
-                Stay connected and grounded during NICU stays
-              </li>
-            </ul>
+            <div className="grid md:grid-cols-2 gap-4 text-gray-300">
+              <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-700/60">
+                <h3 className="font-semibold text-white mb-1">Progress that feels manageable</h3>
+                <p className="text-sm text-gray-400">
+                  Log the small, important moments so you can see how far you&apos;ve come, even on the hardest days.
+                </p>
+              </div>
+              <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-700/60">
+                <h3 className="font-semibold text-white mb-1">Space to process emotions</h3>
+                <p className="text-sm text-gray-400">
+                  Gentle prompts help you check in with how you&apos;re really doing, without turning it into homework.
+                </p>
+              </div>
+              <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-700/60">
+                <h3 className="font-semibold text-white mb-1">Calm, focused design</h3>
+                <p className="text-sm text-gray-400">
+                  A quiet interface made for late nights, long waits, and everything in between.
+                </p>
+              </div>
+              <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-700/60">
+                <h3 className="font-semibold text-white mb-1">Built from lived experience</h3>
+                <p className="text-sm text-gray-400">
+                  Created by someone who&apos;s been through NICU, with details that reflect real life on the ward.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-4">Screenshots</h2>
+            <div className="space-y-4">
+              <div className="aspect-video rounded-2xl overflow-hidden border border-emerald-500/20 bg-gray-900/60 relative">
+                <Image
+                  src="/TinySteps.icon/Assets/AppIcon_1024x1024.png"
+                  alt="TinySteps NICU Dads app interface"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                />
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-white mb-3">
+              This is for the dads no one checks on.
+            </h2>
+            <div className="max-w-2xl space-y-4">
+              <p className="text-gray-300 leading-relaxed">
+                When your baby is in NICU, everyone asks how mum is doing — but rarely how you are. You&apos;re expected
+                to stay strong, hold it together, and just get on with it.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                But the truth is, it&apos;s overwhelming, confusing, and isolating.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                TinySteps was built to give dads something they actually need: clear guidance, emotional support, and a
+                way to take things one small step at a time.
+              </p>
+              <a
+                href="https://tinystepsnicudads.co.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-red-300 transition-colors"
+              >
+                Read more →
+              </a>
+            </div>
           </section>
 
           <section className="pt-8 border-t border-gray-700/50 flex flex-wrap gap-4">
